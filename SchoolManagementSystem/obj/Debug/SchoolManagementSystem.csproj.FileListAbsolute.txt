@@ -236,5 +236,3 @@ C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\S
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csprojResolveAssemblyReference.cache
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.dll
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.pdb
-C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.InitialDatabase.resources
-C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.GenerateResource.Cache

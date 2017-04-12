@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using SchoolManagementSystemModel;
 using SchoolManagementSystemModel.Academics;
 using SchoolManagementSystemModel.School;
@@ -10,9 +11,9 @@ using System.Web;
 
 namespace SchoolManagementSystem.Models.Initialisation
 {
-    public class SchoolContext : DbContext
+    public class SchoolContext : IdentityDbContext
     {
-        public SchoolContext() : base("SMSWEB")
+        public SchoolContext() : base("SMSWEBConnection")
         {
 
         }
