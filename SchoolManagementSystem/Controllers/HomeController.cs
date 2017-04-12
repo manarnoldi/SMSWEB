@@ -14,12 +14,39 @@ namespace SchoolManagementSystem.Controllers
     {
         SchoolContext dbcontext = new SchoolContext();
 
+        private int CountNumberOfItems(string ModelName)
+        {
+            int count = 0;
+            switch (ModelName.ToLower())
+            {
+                case "postalcode":
+                    count = dbcontext.PostalCode.Count();
+                    break;
+
+                case "ConfigParams":
+                    count = dbcontext.ConfigParams.Count();
+                    break;
+                default:
+                    count = 0;
+                    break;
+            }
+            return count;
+        }
+
         public ActionResult Index()
         {
             //dbcontext.Database.ExecuteSqlCommand("TRUNCATE TABLE [PostalCode]");
-            dbcontext.PostalCode.Delete();
 
-            ModelService.InsertPostalCodes();
+            if (CountNumberOfItems("PostalCode") <= 0)
+            {
+                ModelService.InsertPostalCodes();
+            }
+            else if (CountNumberOfItems("ConfigParams") <= 0)
+            {
+                ModelService.InsertPostalCodes();
+            }
+            
+            
             return View();
         }
 
@@ -37,6 +64,6 @@ namespace SchoolManagementSystem.Controllers
             return View();
         }
 
-        
+
     }
 }
