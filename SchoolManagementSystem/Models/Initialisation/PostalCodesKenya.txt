@@ -48,7 +48,6 @@ Busia-50400
 Butere-50101
 Butula-50405
 Buyofu-50210
-Postal Office in Kenya-Code
 Chamakanga-50302
 Changamwe-80102
 Chavakali-50317
@@ -118,7 +117,7 @@ EwasoKedong-242
 Faza-80501
 Fort Ternan-20209
 Funyula-50406
-Gacharage-ini-10210
+Gacharage ini-10210
 Gachoka-60119
 Gaitu-60209
 Gakere Road-10109
@@ -264,7 +263,7 @@ Kapkenda-30119
 Kapkugerwet-20206
 Kapngetuny-30111
 Kapsabet-30300
-Kapsara-0.30208
+Kapsara-30208
 Kapsoit-20211
 Kapsokwony-50203
 Kapsowar-30705
@@ -478,7 +477,7 @@ Mago-50325
 Magombo-40507
 Magumoni-60403
 Magunga-40307
-Magutuni-0.60407
+Magutuni-60407
 Magwagwa-40508
 Mahanga-50322
 MairoInya-20314
@@ -578,7 +577,7 @@ Mogogosiek-20403
 Mogotio-20105
 Moi Airport-80115
 Moi University-30107
-Moi-ben-30104
+Moi ben-30104
 moi`s Bridge-30202
 Mokomoni-40510
 Mokowe-80502
@@ -726,7 +725,7 @@ Othaya-10106
 OthochRakuom-40411
 Othoro-40224
 Otonglo-40108
-Oyani-masii-40334
+Oyani masii-40334
 Oyugis-40222
 Pala-40329
 Pap Onditi-40111

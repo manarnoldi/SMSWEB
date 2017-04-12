@@ -20,6 +20,11 @@ namespace SchoolManagementSystemModel.Academics
         [Required]
         [StringLength(30)]
         [Column(TypeName = "varchar")]
+        public string ParamCategory { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        [Column(TypeName = "varchar")]
         public string ParamName { get; set; }
 
         public int Value { get; set; }

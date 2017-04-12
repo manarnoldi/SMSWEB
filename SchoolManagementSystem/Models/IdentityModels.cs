@@ -21,7 +21,7 @@ namespace SchoolManagementSystem.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("", throwIfV1Schema: false)
+            : base("SMSWEBConnection", throwIfV1Schema: false)
         {
         }
 

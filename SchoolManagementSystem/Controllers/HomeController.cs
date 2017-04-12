@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.Models.Initialisation;
+﻿using EntityFramework.Extensions;
+using SchoolManagementSystem.Models.Initialisation;
 using SchoolManagementSystemModel.School;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,9 @@ namespace SchoolManagementSystem.Controllers
 
         public ActionResult Index()
         {
+            //dbcontext.Database.ExecuteSqlCommand("TRUNCATE TABLE [PostalCode]");
+            dbcontext.PostalCode.Delete();
+
             ModelService.InsertPostalCodes();
             return View();
         }

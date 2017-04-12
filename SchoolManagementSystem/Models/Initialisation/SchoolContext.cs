@@ -6,6 +6,7 @@ using SchoolManagementSystemModel.School;
 using SchoolManagementSystemModel.Student;
 using System;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
@@ -15,8 +16,20 @@ namespace SchoolManagementSystem.Models.Initialisation
     {
         public SchoolContext() : base("SMSWEBConnection")
         {
-
+            Database.SetInitializer<SchoolContext>(null);
+            Configuration.ProxyCreationEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
         }
+
+        public static SchoolContext Create()
+        {
+            return new SchoolContext();
+        }
+
+        //Identity and Authorization
+        public DbSet<IdentityUserLogin> UserLogins { get; set; }
+        public DbSet<IdentityUserClaim> UserClaims { get; set; }
+        public DbSet<IdentityUserRole> UserRoles { get; set; }
 
         public DbSet<Calendar> Calendar { get; set; }
         public DbSet<ClassHead> ClassHead { get; set; }
@@ -48,8 +61,24 @@ namespace SchoolManagementSystem.Models.Initialisation
         public DbSet<Subject> Subject { get; set; }
         public DbSet<SubjectCategory> SubjectCategory { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuider)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) 
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
+            // Configure Asp Net Identity Tables
+            modelBuilder.Entity<IdentityUser>().ToTable("User");
+            modelBuilder.Entity<IdentityUser>().Property(u => u.PasswordHash).HasMaxLength(500);
+            modelBuilder.Entity<IdentityUser>().Property(u => u.SecurityStamp).HasMaxLength(500);
+            modelBuilder.Entity<IdentityUser>().Property(u => u.PhoneNumber).HasMaxLength(50);
+
+            modelBuilder.Entity<IdentityRole>().ToTable("Role");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRole");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogin");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaim");
+            modelBuilder.Entity<IdentityUserClaim>().Property(u => u.ClaimType).HasMaxLength(150);
+            modelBuilder.Entity<IdentityUserClaim>().Property(u => u.ClaimValue).HasMaxLength(500);
+            /**
             modelBuider.Entity<StaffDetails>()
                 .HasRequired(cw => cw.CountyWard)
                 .WithMany()
@@ -65,7 +94,8 @@ namespace SchoolManagementSystem.Models.Initialisation
             modelBuider.Entity<SchoolDetails>()
                 .HasRequired(cw => cw.CoutyWard)
                 .WithMany()
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(false); **/
+            base.OnModelCreating(modelBuilder);
         }
 
         public override int SaveChanges()

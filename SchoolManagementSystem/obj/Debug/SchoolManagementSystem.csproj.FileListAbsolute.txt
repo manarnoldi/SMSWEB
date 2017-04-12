@@ -236,3 +236,9 @@ C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\S
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csprojResolveAssemblyReference.cache
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.dll
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.pdb
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.InitialMigration.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.GenerateResource.Cache
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\bin\Elmah.dll
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\bin\EntityFramework.Extended.dll
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\bin\EntityFramework.Extended.xml
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.AddedfieldparametercategorytotableConfigParams.resources
