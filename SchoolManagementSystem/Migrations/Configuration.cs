@@ -5,14 +5,14 @@ namespace SchoolManagementSystem.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SchoolManagementSystem.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SchoolManagementSystem.Models.Initialisation.SchoolContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(SchoolManagementSystem.Models.ApplicationDbContext context)
+        protected override void Seed(SchoolManagementSystem.Models.Initialisation.SchoolContext context)
         {
             //  This method will be called after migrating to the latest version.
 

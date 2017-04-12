@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SchoolManagementSystem.Models.Initialisation;
+using SchoolManagementSystemModel.School;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,10 +8,14 @@ using System.Web.Mvc;
 
 namespace SchoolManagementSystem.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
+        SchoolContext dbcontext = new SchoolContext();
+
         public ActionResult Index()
         {
+            ModelService.InsertPostalCodes();
             return View();
         }
 
@@ -26,5 +32,7 @@ namespace SchoolManagementSystem.Controllers
 
             return View();
         }
+
+        
     }
 }

@@ -20,5 +20,3 @@ C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\S
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.csprojResolveAssemblyReference.cache
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.dll
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.pdb
-C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.Migrations.InitialMigration.resources
-C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.csproj.GenerateResource.Cache
