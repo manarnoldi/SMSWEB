@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Academics
 {
-   public class SubjectCategory
+   public class SubjectCategory : SMSModelBaseClass
     {
         public int Id { get; set; }
 

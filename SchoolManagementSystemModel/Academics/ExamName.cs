@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Academics
 {
-    public class ExamName
+    public class ExamName: SMSModelBaseClass
     {
         public int Id { get; set; }
 
@@ -21,5 +21,7 @@ namespace SchoolManagementSystemModel.Academics
         [StringLength(30)]
         [Column(TypeName = "varchar")]
         public string ExamType { get; set; }
+
+        public virtual List<Examination> Examinations { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Student
 {
-    public class KcpeResults:SMSModelBaseClass
+    public class KcpeResults: SMSModelBaseClass
     {
         public int Id { get; set; }
 
@@ -16,7 +16,7 @@ namespace SchoolManagementSystemModel.Student
         [StringLength(30)]
         [Column(TypeName = "varchar")]
         public string SchoolName { get; set; }
-
+        
         public int ExamYear { get; set; }
 
         [Required]
@@ -34,5 +34,9 @@ namespace SchoolManagementSystemModel.Student
 
         [Required]
         public float TotalOutOf { get; set; }
+
+        public int StudentDetailsId { get; set; }
+
+        public virtual StudentDetails StudentDetails { get; set; }
     }
 }

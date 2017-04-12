@@ -1,4 +1,6 @@
-﻿using SchoolManagementSystemModel.Student;
+﻿using SchoolManagementSystemModel.Academics;
+using SchoolManagementSystemModel.Enums;
+using SchoolManagementSystemModel.Student;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,32 +11,32 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.School
 {
-    public class SchoolClass
+    public class SchoolClass: SMSModelBaseClass
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(20)]
         [Column(TypeName = "varchar")]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [StringLength(10)]
         [Column(TypeName = "varchar")]
-        public string stream { get; set; }
+        public string Stream { get; set; }
 
-        public int year { get; set; }
+        public int Year { get; set; }
 
-        public Boolean status { get; set; }
-
-        public string createdBy { get; set; }
-
-        public DateTime createdDate { get; set; }
-
-        public string modifiedBy { get; set; }
-
-        public DateTime modifyDate { get; set; }
+        public Status Status { get; set; }
 
         public virtual List<ClassHead> ClassHeads {get; set; }
+
+        public virtual List<StudentClass> StudentClass { get; set; }
+
+        public virtual List<Examination> Examinations { get; set; }
+
+        public virtual List<StaffSubject> StaffSubjects { get; set; }
+
+        public virtual List<StudentSubject> StudentSubjects { get; set; }
     }
 }

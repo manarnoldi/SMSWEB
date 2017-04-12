@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Academics
 {
-    public class StudentSubject
+    public class StudentSubject :  SMSModelBaseClass
     {
         public int Id { get; set; }
 
-        public int ClassId { get; set; }
+        public int SchoolClassId { get; set; }
 
         public virtual SchoolClass SchoolClass { get; set; }
 
-        public int StudId { get; set; }
+        public int StudentDetailsId { get; set; }
 
-        public virtual Student.StudentDetails student { get; set; }
+        public virtual StudentDetails StudentDetails { get; set; }
 
         public int SubjectId { get; set; }
 

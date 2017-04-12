@@ -1,4 +1,6 @@
-﻿using SchoolManagementSystemModel.School;
+﻿using SchoolManagementSystemModel.Academics;
+using SchoolManagementSystemModel.Enums;
+using SchoolManagementSystemModel.School;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,72 +11,68 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Student
 {
-    public class StudentDetails
+    public class StudentDetails : SMSModelBaseClass
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int admNo { get; set; }
-
-        [Required]
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string firstName { get; set; }
-
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string middleName { get; set; }
+        public int AdmNo { get; set; }
 
         [Required]
         [StringLength(30)]
         [Column(TypeName = "varchar")]
-        public string lastName { get; set; }
+        public string FirstName { get; set; }
+
+        [StringLength(30)]
+        [Column(TypeName = "varchar")]
+        public string MiddleName { get; set; }
 
         [Required]
         [StringLength(30)]
         [Column(TypeName = "varchar")]
-        public string gender { get; set; }
+        public string LastName { get; set; }
 
-        [StringLength(30)]
-        [Column(TypeName ="varchar")]
-        public string ward { get; set; }
+        public Gender Gender { get; set; }
 
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string county { get; set; }
+        public int CountyWardId { get; set; }
 
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string religion { get; set; }
-        
-        public DateTime dateOfBirth { get; set; }
-
-        public DateTime dateOfAdmission { get; set; }
-
-        public Boolean status { get; set; }
-        
-        public Boolean disabled { get; set; }
-
-        public Byte[] Image { get; set; }
+        public virtual CountyWard CountyWard { get; set; }
 
         [StringLength(30)]
         [Column(TypeName = "varchar")]
-        public string studentCategory { get; set; }
+        public string Religion { get; set; }
 
-        [Required]
-        public int currentClassId { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
-        public string createdBy { get; set; }
+        public DateTime DateOfAdmission { get; set; }
 
-        public DateTime createdDate { get; set; }
+        public Status Status { get; set; }
 
-        public string modifiedBy { get; set; }
+        public bool Disabled { get; set; }
 
-        public DateTime modifyDate { get; set; }
+        public StudentCategory StudentCategory { get; set; }
 
-        public virtual List<SchoolClass> classes { get; set; }
+        [StringLength(30)]
+        [Column(TypeName = "varchar")]
+        public string PostalAddress {get; set;}
+
+        public virtual PostalCode PostalCode { get; set; }
+
+        public byte[] Image { get; set; }
+
+        public virtual List<SchoolClass> Classes { get; set; }
+
+        public virtual List<StudentClass> StudentClass { get; set; }
 
         public virtual List<ClassHead> ClassHeads { get; set; }
 
-        public virtual List<StudentParent> StuStudentParents { get; set; }
+        public virtual List<StudentParent> StudentParents { get; set; }
+
+        public virtual List<ClassAttendance> ClassAttendance { get; set; }
+
+        public virtual List<KcpeResults> KCPEResults { get; set; }
+
+        public virtual List<ExamResult> ExamResults { get; set; }
+
+        public virtual List<StudentSubject> StudentSubjects { get; set; }
     }
 }

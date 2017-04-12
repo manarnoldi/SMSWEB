@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Academics
 {
-    public class StaffSubject
+    public class StaffSubject : SMSModelBaseClass
     {
         public int Id { get; set; }
 
-        public int StaffId { get; set; }
+        public int StaffDetailsId { get; set; }
 
-        public virtual StaffDetails Staff { get; set; }
+        public virtual StaffDetails StaffDetails { get; set; }
 
         public int SubjectId { get; set; }
 
         public virtual Subject Subject { get; set; }
 
-        public int ClassId { get; set; }
+        public int SchoolClassId { get; set; }
 
         public virtual SchoolClass SchoolClass { get; set; }
     }

@@ -12,21 +12,27 @@ namespace SchoolManagementSystemModel
 {
     public class SchoolContext : DbContext
     {
+        public SchoolContext() : base("SMSWEB")
+        {
+
+        }
+
         public DbSet<Calendar> Calendar { get; set; }
         public DbSet<ClassHead> ClassHead { get; set; }
         public DbSet<ClassRoom> ClassRoom { get; set; }
         public DbSet<Department> Department { get; set; }
+        public DbSet<PostalCode> PostalCode { get; set; }
         public DbSet<Posting> Posting { get; set; }
         public DbSet<PostingPeriod> PostingPeriod { get; set; }
         public DbSet<SchoolClass> SchoolClass { get; set; }
         public DbSet<SchoolDetails> SchoolDetails { get; set; }
         public DbSet<StaffDetails> StaffDetails { get; set; }
 
-        public DbSet<AdmNo> AdmNo { get; set; }
+        public DbSet<AdmissionNo> AdmissionNo { get; set; }
         public DbSet<ClassAttendance> ClassAttendance { get; set; }
         public DbSet<KcpeResults> KCPEResults { get; set; }
         public DbSet<Parent> Parent { get; set; }
-        public DbSet<StuClass> StuClass { get; set; }
+        public DbSet<StudentClass> StudentClass { get; set; }
         public DbSet<StudentDetails> StudentDetails { get; set; }
         public DbSet<StudentParent> StudentParent { get; set; }
 
@@ -43,7 +49,22 @@ namespace SchoolManagementSystemModel
 
         protected override void OnModelCreating(DbModelBuilder modelBuider)
         {
-
+            modelBuider.Entity<StaffDetails>()
+                .HasRequired(cw => cw.CountyWard)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+            modelBuider.Entity<StudentDetails>()
+                .HasRequired(cw => cw.CountyWard)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+            modelBuider.Entity<Parent>()
+                .HasRequired(cw => cw.CountyWard)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+            modelBuider.Entity<SchoolDetails>()
+                .HasRequired(cw => cw.CoutyWard)
+                .WithMany()
+                .WillCascadeOnDelete(false);
         }
 
         public override int SaveChanges()

@@ -8,21 +8,23 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Academics
 {
-    public class Grade
+    public class Grade : SMSModelBaseClass
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(30)]
         [Column(TypeName = "varchar")]
-        public string gradeName { get; set; }
+        public string GradeName { get; set; }
 
         [Required]
-        public float upperMark { get; set; }
+        public float UpperMark { get; set; }
 
         [Required]
-        public float lowerMark { get; set; }
+        public float LowerMark { get; set; }
 
-        public int points { get; set; }
+        public int Points { get; set; }
+
+        public virtual List<GradeRemark> GradeRemarks { get; set; }
     }
 }

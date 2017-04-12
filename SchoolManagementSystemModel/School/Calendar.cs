@@ -1,4 +1,6 @@
-﻿using SchoolManagementSystemModel.Enums;
+﻿using SchoolManagementSystemModel.Academics;
+using SchoolManagementSystemModel.Enums;
+using SchoolManagementSystemModel.Student;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -25,5 +27,9 @@ namespace SchoolManagementSystemModel.School
         public DateTime EndDate { get; set; }
 
         public Status Status { get; set; }
+
+        public virtual List<ClassAttendance> ClassAttendance {get; set; }
+
+        public virtual List<Examination> Examinations { get; set; }
     }
 }

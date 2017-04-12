@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystemModel.Enums;
+﻿using SchoolManagementSystemModel.Academics;
+using SchoolManagementSystemModel.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,66 +10,54 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.School
 {
-    public class StaffDetails
+    public class StaffDetails :SMSModelBaseClass
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(20)]
         [Column(TypeName = "varchar")]
-        public string staffNo { get; set; }
+        public string StaffNo { get; set; }
 
         [Required]
         [StringLength(15)]
         [Column(TypeName = "varchar")]
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
         
         [StringLength(15)]
         [Column(TypeName = "varchar")]
-        public string middleName { get; set; }
+        public string MiddleName { get; set; }
 
         [Required]
         [StringLength(15)]
         [Column(TypeName = "varchar")]
-        public string lastName { get; set; }
+        public string LastName { get; set; }
         
-        public int idNumber { get; set; }
-        
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string phoneNumber { get; set; }
+        public int IdNumber { get; set; }
         
         [StringLength(30)]
         [Column(TypeName = "varchar")]
-        public string ward { get; set; }
+        public string PhoneNumber { get; set; }
         
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string county { get; set; }
-        
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string religion { get; set; }
+        public int CountyWardId { get; set; }
 
-        [Required]
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string staffType { get; set; }
+        public virtual CountyWard CountyWard { get; set; }
         
         [StringLength(30)]
         [Column(TypeName = "varchar")]
-        public string gender { get; set; }
+        public string Religion { get; set; }
+        
+        public Gender Gender { get; set; }
         
         [StringLength(30)]
         [Column(TypeName = "varchar")]
-        public string email { get; set; }
+        public string Email { get; set; }
 
-        [Required]
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string employmentType { get; set; }
+        public ContractType ContractType { get; set; }
 
-        public DateTime dateOfEmployment { get; set; }
+        public StaffType StaffType { get; set; }
+
+        public DateTime DateOfEmployment { get; set; }
 
         [Required]
         [StringLength(30)]
@@ -77,6 +66,16 @@ namespace SchoolManagementSystemModel.School
 
         public Status Status { get; set; }
 
+        [StringLength(30)]
+        [Column(TypeName = "varchar")]
+        public string PostalAddress { get; set; }
+        
+        public virtual PostalCode PostalCode { get; set; }
+
         public virtual List<ClassHead> ClassHeads { get; set; }
+
+        public virtual List<Department> Departments { get; set; }
+
+        public virtual List<StaffSubject> StaffSubjects { get; set; }
     }
 }

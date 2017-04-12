@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystemModel.School;
+﻿using SchoolManagementSystemModel.Enums;
+using SchoolManagementSystemModel.School;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,14 @@ namespace SchoolManagementSystemModel.Student
 
         public int StudId { get; set; }
 
-        public virtual StudentDetails StuStudent { get; set; }
+        public virtual StudentDetails StudentDetails { get; set; }
 
         public int CalendarId { get; set; }
 
-        public virtual Calendar SchCalendar { get; set; }
+        public virtual Calendar Calendar { get; set; }
 
         public DateTime Date { get; set; }
 
-        public Boolean Status { get; set; }
+        public Attendance Attendance { get; set; }
     }
 }

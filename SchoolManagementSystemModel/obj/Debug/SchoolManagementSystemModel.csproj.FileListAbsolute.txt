@@ -10,3 +10,15 @@ C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\Training\SchoolManagemen
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\Training\SchoolManagementSystem\SchoolManagementSystemModel\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\Training\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.Migrations.InitialMigration.resources
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\Training\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.csproj.GenerateResource.Cache
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\bin\Debug\SchoolManagementSystemModel.dll.config
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\bin\Debug\SchoolManagementSystemModel.dll
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\bin\Debug\SchoolManagementSystemModel.pdb
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\bin\Debug\EntityFramework.dll
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\bin\Debug\EntityFramework.xml
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.csprojResolveAssemblyReference.cache
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.dll
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.pdb
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.Migrations.InitialMigration.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystemModel\obj\Debug\SchoolManagementSystemModel.csproj.GenerateResource.Cache

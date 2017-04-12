@@ -13,7 +13,7 @@ namespace SchoolManagementSystemModel.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201704050633401_InitialMigration"; }
+            get { return "201704120546232_Initial Migration"; }
         }
         
         string IMigrationMetadata.Source

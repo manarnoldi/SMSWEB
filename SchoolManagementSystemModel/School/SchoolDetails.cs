@@ -17,42 +17,28 @@ namespace SchoolManagementSystemModel.School
         [Column(TypeName = "varchar")]
         public string Name { get; set; }
 
-        [StringLength(15)]
+        [StringLength(30)]
         [Column(TypeName = "varchar")]
         public string PhoneNumber { get; set; }
 
-        [StringLength(20)]
+        [StringLength(30)]
         [Column(TypeName = "varchar")]
-        public string emailAddress { get; set; }
+        public string EmailAddress { get; set; }
 
-        [StringLength(15)]
+        [StringLength(30)]
         [Column(TypeName = "varchar")]
         public string MobileNumber { get; set; }
 
-        public int boxNumber { get; set; }
+        public int PostalAddress { get; set; }
 
-        public int zipCode { get; set; }
+        public int PostalId { get; set; }
 
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string town { get; set; }
+        public virtual PostalCode PostalCode { get; set; }
 
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string ward { get; set; }
+        public int CoutyWardId { get; set; }
 
-        [StringLength(30)]
-        [Column(TypeName = "varchar")]
-        public string county { get; set; }
+        public virtual CountyWard CoutyWard { get; set; }
 
         public byte[] Logo { get; set; }
-
-        public string createdBy { get; set; }
-
-        public DateTime createdDate { get; set; }
-
-        public string modifyBy { get; set; }
-
-        public DateTime modifyDate { get; set; }
     }
 }

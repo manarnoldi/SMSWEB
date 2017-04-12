@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolManagementSystemModel.Student;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,11 +14,11 @@ namespace SchoolManagementSystemModel.Academics
 
         public int ExaminationId { get; set; }
 
-        public Examination Examination { get; set; }
+        public virtual Examination Examination { get; set; }
 
-        public int StudentId { get; set; }
+        public int StudentDetailsId { get; set; }
 
-        public Student.StudentDetails Student { get; set; }
+        public virtual StudentDetails StudentDetails { get; set; }
 
         [Required]
         public double MarkScored { get; set; }

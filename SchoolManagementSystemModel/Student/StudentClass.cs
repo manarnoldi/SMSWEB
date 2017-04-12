@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystemModel.School;
+﻿using SchoolManagementSystemModel.Enums;
+using SchoolManagementSystemModel.School;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Student
 {
-    public class StuClass
+    public class StudentClass : SMSModelBaseClass
     {
         public int Id { get; set; }
 
@@ -19,6 +20,6 @@ namespace SchoolManagementSystemModel.Student
 
         public virtual SchoolClass SchoolClass { get; set;}
         
-        public bool Status { get; set; }
+        public Status Status { get; set; }
     }
 }

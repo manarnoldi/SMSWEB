@@ -25,12 +25,14 @@ namespace SchoolManagementSystemModel.Academics
 
         public int ExamNameId { get; set; }
 
-        public ExamName ExamName { get; set; }
+        public virtual ExamName ExamName { get; set; }
 
         public double ExamMark { get; set; }
 
         public double TypeTotalMark { get; set; }
 
         public double TypeContrMark { get; set; }
+
+        public virtual List<ExamResult> ExamResults { get; set; }
     }
 }

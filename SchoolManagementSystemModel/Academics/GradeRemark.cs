@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Academics
 {
-    public class GradeRemark
+    public class GradeRemark : SMSModelBaseClass
     {
         public int Id { get; set; }
 

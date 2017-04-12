@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Academics
 {
-    public class ConfigParams
+    public class ConfigParams: SMSModelBaseClass
     {
         public int Id { get; set; }
 

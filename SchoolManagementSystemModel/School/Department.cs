@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolManagementSystemModel.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,25 +9,19 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.School
 {
-    public class Department
+    public class Department :SMSModelBaseClass
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(30)]
         [Column(TypeName = "varchar")]
-        public string name { get; set; }
+        public string Name { get; set; }
         
-        public int departmentHeadId { get; set; }
+        public int StaffDetailsId { get; set; }
 
-        public Boolean status { get; set; }
+        public virtual StaffDetails StaffDetails { get; set; }
 
-        public string createdBy { get; set; }
-
-        public DateTime createdDate { get; set; }
-
-        public string modifiedBy { get; set; }
-
-        public DateTime modifyDate { get; set; }
+        public Status status { get; set; }
     }
 }

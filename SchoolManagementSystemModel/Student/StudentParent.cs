@@ -12,11 +12,13 @@ namespace SchoolManagementSystemModel.Student
     {
         public int Id { get; set; }
 
-        public int StuStudentId { get; set; }
-        public virtual StudentDetails StuStudent { get; set; }
+        public int StudentDetailsId { get; set; }
 
-        public int StudParent { get; set; }
-        public virtual Parent StuParent { get; set; }
+        public virtual StudentDetails StudentDetails { get; set; }
+
+        public int ParentId { get; set; }
+
+        public virtual Parent Parent { get; set; }
 
         [Required]
         [StringLength(30)]

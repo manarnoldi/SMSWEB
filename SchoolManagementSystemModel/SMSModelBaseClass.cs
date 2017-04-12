@@ -13,18 +13,18 @@ namespace SchoolManagementSystemModel
         [Required]
         [StringLength(50)]
         [Column(TypeName ="varchar")]
-        public string createdBy { get; set; }
+        public string CreateBy { get; set; }
 
         [Required]
-        public DateTime createdDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
         [Required]
         [StringLength(50)]
         [Column(TypeName = "varchar")]
-        public string modifiedBy { get; set; }
+        public string ModifyBy { get; set; }
 
         [Required]
-        public DateTime modifyDate { get; set; }
+        public DateTime ModifyDate { get; set; }
 
     }
 }

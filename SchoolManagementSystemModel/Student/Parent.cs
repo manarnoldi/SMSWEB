@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SchoolManagementSystemModel.Enums;
+using SchoolManagementSystemModel.School;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,48 +12,47 @@ namespace SchoolManagementSystemModel.Student
 {
     public class Parent
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(50)]
         [Column(TypeName = "varchar")]
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
+        
+        [StringLength(50)]
+        [Column(TypeName = "varchar")]
+        public string MiddleName { get; set; }
 
         [Required]
         [StringLength(50)]
         [Column(TypeName = "varchar")]
-        public string middleName { get; set; }
+        public string LastName { get; set; }
+        
+        [StringLength(50)]
+        [Column(TypeName = "varchar")]
+        public string EmailAddress { get; set; }
+        
+        [StringLength(50)]
+        [Column(TypeName = "varchar")]
+        public string PhoneNo { get; set; }
+
+        public int PostalAddress { get; set; }
+
+        public int PostalCodeId { get; set; }
+
+        public virtual PostalCode PostalCode { get; set; }
+
+        public int CountyWardId { get; set; }
+
+        public virtual CountyWard CountyWard { get; set; }
+
+        public Gender Gender { get; set; }
 
         [Required]
         [StringLength(50)]
         [Column(TypeName = "varchar")]
-        public string lastName { get; set; }
+        public string Occupation { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        [Column(TypeName = "varchar")]
-        public string emailAddress { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        [Column(TypeName = "varchar")]
-        public string phoneNo { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        [Column(TypeName = "varchar")]
-        public string ward { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        [Column(TypeName = "varchar")]
-        public string county { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        [Column(TypeName = "varchar")]
-        public string occupation { get; set; }
-
-        public virtual List<StudentParent> StuStudentParents { get; set; }
+        public virtual List<StudentParent> StudentParents { get; set; }
     }
 }

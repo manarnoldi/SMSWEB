@@ -59,14 +59,21 @@
     <Compile Include="Academics\StudentSubject.cs" />
     <Compile Include="Academics\SubjectCategory.cs" />
     <Compile Include="Academics\Subject.cs" />
+    <Compile Include="Enums\Attendance.cs" />
+    <Compile Include="Enums\ContractType.cs" />
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\StaffType.cs" />
     <Compile Include="Enums\Status.cs" />
-    <Compile Include="Migrations\201704050633401_InitialMigration.cs" />
-    <Compile Include="Migrations\201704050633401_InitialMigration.Designer.cs">
-      <DependentUpon>201704050633401_InitialMigration.cs</DependentUpon>
+    <Compile Include="Enums\StudentCategory.cs" />
+    <Compile Include="Migrations\201704120546232_Initial Migration.cs" />
+    <Compile Include="Migrations\201704120546232_Initial Migration.Designer.cs">
+      <DependentUpon>201704120546232_Initial Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SchoolContext.cs" />
     <Compile Include="School\ClassHead.cs" />
+    <Compile Include="School\CountyWard.cs" />
+    <Compile Include="School\PostalCode.cs" />
     <Compile Include="School\PostingPeriod.cs" />
     <Compile Include="School\Calendar.cs" />
     <Compile Include="School\SchoolClass.cs" />
@@ -78,21 +85,20 @@
     <Compile Include="School\StaffDetails.cs" />
     <Compile Include="SMSModelBaseClass.cs" />
     <Compile Include="Student\ClassAttendance.cs" />
-    <Compile Include="Student\AdmNo.cs" />
+    <Compile Include="Student\AdmissionNo.cs" />
     <Compile Include="Student\KcpeResults.cs" />
     <Compile Include="Student\Parent.cs" />
-    <Compile Include="Student\StuClass.cs" />
+    <Compile Include="Student\StudentClass.cs" />
     <Compile Include="Student\StudentDetails.cs" />
     <Compile Include="Student\StudentParent.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704050633401_InitialMigration.resx">
-      <DependentUpon>201704050633401_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704120546232_Initial Migration.resx">
+      <DependentUpon>201704120546232_Initial Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

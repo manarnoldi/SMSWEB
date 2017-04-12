@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.Academics
 {
-    public class Subject
+    public class Subject : SMSModelBaseClass
     {
         public int Id { get; set; }
 
@@ -26,8 +26,16 @@ namespace SchoolManagementSystemModel.Academics
 
         public int SubjectCategoryId { get; set; }
 
+        public bool Offered { get; set; }
+
         public virtual SubjectCategory SubjectCategory { get; set; }
 
-        public bool Offered { get; set; }
+        public virtual List<Examination> Examinations { get; set; }
+
+        public virtual List<GradeRemark> GradeRemarks { get; set; }
+
+        public virtual List<StaffSubject> StaffSubjects { get; set; }
+
+        public virtual List<StudentSubject> StudentSubjects { get; set; }
     }
 }
