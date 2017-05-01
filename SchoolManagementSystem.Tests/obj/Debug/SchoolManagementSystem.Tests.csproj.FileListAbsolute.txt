@@ -138,5 +138,3 @@ C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\S
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem.Tests\obj\Debug\SchoolManagementSystem.Tests.csprojResolveAssemblyReference.cache
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem.Tests\obj\Debug\SchoolManagementSystem.Tests.dll
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem.Tests\obj\Debug\SchoolManagementSystem.Tests.pdb
-C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem.Tests\bin\Debug\EntityFramework.Extended.dll
-C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem.Tests\bin\Debug\EntityFramework.Extended.xml

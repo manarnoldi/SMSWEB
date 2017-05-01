@@ -33,11 +33,12 @@ namespace SchoolManagementSystem.Models.Initialisation
         {
             SchoolContext dbcontext = new SchoolContext();
 
-            dbcontext.ConfigParams.Add(new ConfigParams() { ParamCategory ="Teacher", ParamType = "Lessons", ParamName ="", Value = 30 });
+            dbcontext.ConfigParams.Add(new ConfigParams() { ParamCategory ="Teacher", ParamType = "Lessons", ParamName ="Lessons", Value = 30 });
             dbcontext.ConfigParams.Add(new ConfigParams() { ParamCategory = "Student", ParamType = "Subjects", ParamName = "Form 1", Value = 8 });
             dbcontext.ConfigParams.Add(new ConfigParams() { ParamCategory = "Student", ParamType = "Subjects", ParamName = "Form 2", Value = 8 });
             dbcontext.ConfigParams.Add(new ConfigParams() { ParamCategory = "Student", ParamType = "Subjects", ParamName = "Form 3", Value = 15 });
             dbcontext.ConfigParams.Add(new ConfigParams() { ParamCategory = "Student", ParamType = "Subjects", ParamName = "Form 4", Value = 15 });
+            dbcontext.SaveChanges();
         }
     }
 }

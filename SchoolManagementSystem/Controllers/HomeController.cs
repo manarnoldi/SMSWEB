@@ -43,7 +43,7 @@ namespace SchoolManagementSystem.Controllers
             }
             else if (CountNumberOfItems("ConfigParams") <= 0)
             {
-                ModelService.InsertPostalCodes();
+                ModelService.InsertConfigParams();
             }
             
             
