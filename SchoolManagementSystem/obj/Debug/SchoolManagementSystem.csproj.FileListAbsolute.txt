@@ -242,3 +242,4 @@ C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\S
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\bin\EntityFramework.Extended.dll
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\bin\EntityFramework.Extended.xml
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.AddedfieldparametercategorytotableConfigParams.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SchoolManagementSystem\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.AddedToDoListTable.resources

@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201704121714379_Added field parameter category to table ConfigParams.Designer.cs">
       <DependentUpon>201704121714379_Added field parameter category to table ConfigParams.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705021626414_Added ToDoList Table.cs" />
+    <Compile Include="Migrations\201705021626414_Added ToDoList Table.Designer.cs">
+      <DependentUpon>201705021626414_Added ToDoList Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -233,11 +237,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\colors.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\metisMenu.css" />
     <Content Include="Content\metisMenu.min.css" />
     <Content Include="Content\morris.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704121714379_Added field parameter category to table ConfigParams.resx">
       <DependentUpon>201704121714379_Added field parameter category to table ConfigParams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705021626414_Added ToDoList Table.resx">
+      <DependentUpon>201705021626414_Added ToDoList Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

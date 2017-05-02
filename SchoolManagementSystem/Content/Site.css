@@ -44,8 +44,9 @@ body {
 @media (min-width: 768px) {
     #page-wrapper {
         position: inherit;
-        margin: 0 0 0 250px;
-        padding: 0 30px;
+        margin-right: -40px;
+        margin-left: 300px;
+        padding: 0 20px;
         border-left: 1px solid #e7e7e7;
     }
 }
@@ -154,7 +155,7 @@ body {
     .sidebar {
         z-index: 1;
         position: absolute;
-        width: 250px;
+        width: 300px;
         margin-top: 51px;
     }
 
@@ -554,4 +555,20 @@ table.dataTable thead .sorting_desc_disabled {
 
 img#schoolLogo {
     max-height: 25px;
+}
+
+.mainDiv {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-right {
+    float: right;
+    margin-right: 0px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 20px;
 }

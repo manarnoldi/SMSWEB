@@ -41,6 +41,7 @@ namespace SchoolManagementSystem.Models.Initialisation
         public DbSet<SchoolClass> SchoolClass { get; set; }
         public DbSet<SchoolDetails> SchoolDetails { get; set; }
         public DbSet<StaffDetails> StaffDetails { get; set; }
+        public DbSet<ToDoList> ToDoList { get; set; }
 
         public DbSet<AdmissionNo> AdmissionNo { get; set; }
         public DbSet<ClassAttendance> ClassAttendance { get; set; }

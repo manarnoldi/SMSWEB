@@ -65,6 +65,7 @@
     <Compile Include="Enums\StaffType.cs" />
     <Compile Include="Enums\Status.cs" />
     <Compile Include="Enums\StudentCategory.cs" />
+    <Compile Include="Enums\TaskStatus.cs" />
     <Compile Include="School\ClassHead.cs" />
     <Compile Include="School\CountyWard.cs" />
     <Compile Include="School\PostalCode.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="School\SchoolDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="School\StaffDetails.cs" />
+    <Compile Include="School\ToDoList.cs" />
     <Compile Include="SMSModelBaseClass.cs" />
     <Compile Include="Student\ClassAttendance.cs" />
     <Compile Include="Student\AdmissionNo.cs" />

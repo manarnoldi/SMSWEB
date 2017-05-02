@@ -34,8 +34,10 @@ namespace SchoolManagementSystem
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/metisMenu.min.css",
+                      "~/Content/styles.css",
                       "~/Content/site.css",
                       "~/Content/morris.css",
+                       "~/Content/colors.min.css",
                       "~/Content/font-awesome.min.css"));
 
 

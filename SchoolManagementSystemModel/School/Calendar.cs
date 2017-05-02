@@ -31,5 +31,7 @@ namespace SchoolManagementSystemModel.School
         public virtual List<ClassAttendance> ClassAttendance {get; set; }
 
         public virtual List<Examination> Examinations { get; set; }
+
+        public virtual List<ToDoList> ToDoList { get; set; }
     }
 }
