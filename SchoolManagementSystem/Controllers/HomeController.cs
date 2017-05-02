@@ -23,7 +23,7 @@ namespace SchoolManagementSystem.Controllers
                     count = dbcontext.PostalCode.Count();
                     break;
 
-                case "ConfigParams":
+                case "configparams":
                     count = dbcontext.ConfigParams.Count();
                     break;
                 default:
