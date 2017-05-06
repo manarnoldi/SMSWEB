@@ -566,9 +566,16 @@ img#schoolLogo {
     float: right;
     margin-right: 0px;
 }
-
 .center {
     margin: auto;
-    width: 50%;
+    margin-top: 50px;
     padding: 20px;
+    /*border: solid 1px green;*/
+    background-color:#fafffe;
+}
+#login-text{
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    padding-left:50px;
 }

@@ -3,39 +3,83 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+</head>
+<body style='background-color: transparent; background-image : url("../Images/BackgroundImage.png")'>
+    <div id="wrapper_login">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a href='@Url.Action("Index", "Home")' class="navbar-brand">
+                    <img src='@Url.Content("~/Images/SchoolSoftHeading.png")' id="schoolLogo" />
+                </a>
+            </div>
+        </nav>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+        <div class="container body-content" id="page-wrapper_main">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="center" style="text-align:center">
+                        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <h4>Register new account</h4>
+                                <hr />
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-5 control-label" })
+                                    <div class="col-md-7">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password, new { @class = "col-md-5 control-label" })
+                                    <div class="col-md-7">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-5 control-label" })
+                                    <div class="col-md-7">
+                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-5 col-md-7">
+                                        <input type="submit" class="btn btn-primary btn-block" value="Register" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <p>
+                                        @Html.ActionLink("Back to Login page", "Login")
+                                    </p>
+                                </div>
+                                
+                        }
+                    </div>
+
+
+                </div>
+            </div>
+            <hr />
+            <footer>
+                <p style="text-align:center">&copy; @DateTime.Now.Year - SchoolSoft Web V 1.0</p>
+            </footer>
+        </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/js")
+    @*RenderSection("scripts", required: false)*@
+</body>
+</html>
