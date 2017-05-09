@@ -222,6 +222,14 @@
     <Compile Include="Migrations\201705021626414_Added ToDoList Table.Designer.cs">
       <DependentUpon>201705021626414_Added ToDoList Table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705090858414_changes to the SMSModelBaseClass create by and modify fields to Guid.cs" />
+    <Compile Include="Migrations\201705090858414_changes to the SMSModelBaseClass create by and modify fields to Guid.Designer.cs">
+      <DependentUpon>201705090858414_changes to the SMSModelBaseClass create by and modify fields to Guid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705090901526_changes to the SMSModelBaseClass create by and modify fields to nvarchar.cs" />
+    <Compile Include="Migrations\201705090901526_changes to the SMSModelBaseClass create by and modify fields to nvarchar.Designer.cs">
+      <DependentUpon>201705090901526_changes to the SMSModelBaseClass create by and modify fields to nvarchar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -358,6 +366,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705021626414_Added ToDoList Table.resx">
       <DependentUpon>201705021626414_Added ToDoList Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705090858414_changes to the SMSModelBaseClass create by and modify fields to Guid.resx">
+      <DependentUpon>201705090858414_changes to the SMSModelBaseClass create by and modify fields to Guid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705090901526_changes to the SMSModelBaseClass create by and modify fields to nvarchar.resx">
+      <DependentUpon>201705090901526_changes to the SMSModelBaseClass create by and modify fields to nvarchar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

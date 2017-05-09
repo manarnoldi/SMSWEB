@@ -11,8 +11,8 @@ namespace SchoolManagementSystemModel
     public class SMSModelBaseClass
     {
         [Required]
-        [StringLength(50)]
-        [Column(TypeName ="varchar")]
+        [StringLength(128)]
+        [Column(TypeName ="nvarchar")]
         [ScaffoldColumn(false)]
         public string CreateBy { get; set; }
 
@@ -21,9 +21,9 @@ namespace SchoolManagementSystemModel
         public DateTime CreateDate { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(128)]
+        [Column(TypeName = "nvarchar")]
         [ScaffoldColumn(false)]
-        [Column(TypeName = "varchar")]
         public string ModifyBy { get; set; }
 
         [Required]
