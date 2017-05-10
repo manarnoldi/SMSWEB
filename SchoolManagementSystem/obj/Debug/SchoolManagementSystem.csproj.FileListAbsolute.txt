@@ -372,3 +372,8 @@ C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SMS WEB\SchoolManagement
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.pdb
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.changestotheSMSModelBaseClasscreatebyandmodifyfieldstoGuid.resources
 C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.changestotheSMSModelBaseClasscreatebyandmodifyfieldstonvarchar.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.madechangestotheschooldetailsentitymadetherelationship.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.addedconstituencyinthecountywardmodel.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.Updatedcreatebyupdatebycreatedateandupdatebyremovedrequiredattribute.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.changedcreatedateandupdatedatecolumnstonullable.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2015\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.ChangedschoolDetailstablenamecolumntoindexedandunique.resources

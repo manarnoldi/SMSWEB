@@ -15,6 +15,7 @@ namespace SchoolManagementSystemModel.School
         [Required]
         [StringLength(30)]
         [Column(TypeName = "varchar")]
+        [Index("IX_SchoolDetails_Name",IsUnique = true)]
         public string Name { get; set; }
 
         [StringLength(30)]
@@ -23,6 +24,7 @@ namespace SchoolManagementSystemModel.School
 
         [StringLength(30)]
         [Column(TypeName = "varchar")]
+        [Index("IX_SchoolDetails_Email", IsUnique = true)]
         public string EmailAddress { get; set; }
 
         [StringLength(30)]
@@ -31,7 +33,7 @@ namespace SchoolManagementSystemModel.School
 
         public int PostalAddress { get; set; }
 
-        public int PostalId { get; set; }
+        public int PostalCodeId { get; set; }
 
         public virtual PostalCode PostalCode { get; set; }
 

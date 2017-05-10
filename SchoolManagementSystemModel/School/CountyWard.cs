@@ -21,6 +21,11 @@ namespace SchoolManagementSystemModel.School
         [Required]
         [StringLength(30)]
         [Column(TypeName = "varchar")]
+        public string Constituency { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        [Column(TypeName = "varchar")]
         public string Ward { get; set; }
 
         public virtual List<Parent> Parents { get; set; }

@@ -10,25 +10,21 @@ namespace SchoolManagementSystemModel
 {
     public class SMSModelBaseClass
     {
-        [Required]
         [StringLength(128)]
         [Column(TypeName ="nvarchar")]
         [ScaffoldColumn(false)]
         public string CreateBy { get; set; }
-
-        [Required]
+        
         [ScaffoldColumn(false)]
-        public DateTime CreateDate { get; set; }
-
-        [Required]
+        public DateTime? CreateDate { get; set; }
+        
         [StringLength(128)]
         [Column(TypeName = "nvarchar")]
         [ScaffoldColumn(false)]
         public string ModifyBy { get; set; }
-
-        [Required]
+        
         [ScaffoldColumn(false)]
-        public DateTime ModifyDate { get; set; }
+        public DateTime? ModifyDate { get; set; }
 
     }
 }

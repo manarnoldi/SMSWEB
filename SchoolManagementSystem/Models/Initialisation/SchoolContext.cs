@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SchoolManagementSystem.Assets;
 using SchoolManagementSystemModel;
 using SchoolManagementSystemModel.Academics;
 using SchoolManagementSystemModel.School;
 using SchoolManagementSystemModel.Student;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 
@@ -14,6 +17,8 @@ namespace SchoolManagementSystem.Models.Initialisation
 {
     public class SchoolContext : IdentityDbContext
     {
+        internal readonly int CountyWard;
+
         public SchoolContext() : base("SMSWEBConnection")
         {
             Database.SetInitializer<SchoolContext>(null);
@@ -42,6 +47,7 @@ namespace SchoolManagementSystem.Models.Initialisation
         public DbSet<SchoolDetails> SchoolDetails { get; set; }
         public DbSet<StaffDetails> StaffDetails { get; set; }
         public DbSet<ToDoList> ToDoList { get; set; }
+        public DbSet<CountyWard> CountyWards { get; set; }
 
         public DbSet<AdmissionNo> AdmissionNo { get; set; }
         public DbSet<ClassAttendance> ClassAttendance { get; set; }
@@ -98,15 +104,84 @@ namespace SchoolManagementSystem.Models.Initialisation
                 .WillCascadeOnDelete(false); **/
             base.OnModelCreating(modelBuilder);
         }
-
+        /**
         public override int SaveChanges()
         {
-            foreach (var auditTrail in this.ChangeTracker.Entries().Where(e => e.Entity is SMSModelBaseClass && (e.State == EntityState.Added ||
+            try
+            {
+                AddTimestamps();
+                return base.SaveChanges();
+            }
+            catch (DbEntityValidationException ve)
+            {
+                var errors = new List<string>();
+                foreach (var e in ve.EntityValidationErrors)
+                {
+                    errors.AddRange(e.ValidationErrors.Select(e2 => string.Join("Validation Error :: ", e2.PropertyName, " : ", e2.ErrorMessage)));
+                }
+                var error = string.Join("\r\n", errors);
+                var betterException = new Exception(error, ve);
+
+                throw betterException;
+            }
+
+        }
+        **/
+        public override int SaveChanges()
+        {
+            try
+            {
+                AddTimestamps();
+                return base.SaveChanges();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                // Retrieve the error messages as a list of strings.
+                var errorMessages = ex.EntityValidationErrors
+                        .SelectMany(x => x.ValidationErrors)
+                        .Select(x => x.ErrorMessage);
+
+                // Join the list to a single string.
+                var fullErrorMessage = string.Join(" ",errorMessages);
+
+                // Combine the original exception message with the new one.
+                var exceptionMessage = string.Concat(ex.Message, "The validation errors are: ", fullErrorMessage);
+
+                // Throw a new DbEntityValidationException with the improved exception message.
+                throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
+            }
+        }
+        private void AddTimestamps()
+        {
+            var entities = ChangeTracker.Entries().Where(x => x.Entity is SMSModelBaseClass && (x.State == EntityState.Added || x.State == EntityState.Modified));
+
+            var currentUserId = !string.IsNullOrEmpty(HttpContext.Current?.User?.Identity?.GetUserId())
+            ? HttpContext.Current.User.Identity.GetUserId()
+            : "Anonymous";
+
+            foreach (var entity in entities)
+            {
+                if (entity.State == EntityState.Added)
+                {
+                    ((SMSModelBaseClass)entity.Entity).CreateDate = DateTime.Now;
+                    ((SMSModelBaseClass)entity.Entity).CreateBy = currentUserId;
+                }
+
+               entity.Property("CreateBy").IsModified = false;
+               entity.Property("CreateDate").IsModified = false;
+
+                ((SMSModelBaseClass)entity.Entity).ModifyDate = DateTime.Now;
+                ((SMSModelBaseClass)entity.Entity).ModifyBy = currentUserId;
+            }
+        }
+
+        public void JulieLermanUpdateTimeStamps()
+        {
+            foreach (var auditTrail in ChangeTracker.Entries().Where(e => e.Entity is SMSModelBaseClass && (e.State == EntityState.Added ||
             e.State == EntityState.Modified)).Select(e => e.Entity as SMSModelBaseClass))
             {
                 auditTrail.ModifyDate = DateTime.Now;
                 auditTrail.ModifyBy = HttpContext.Current.User.Identity.GetUserId();
-                
                 if (auditTrail.CreateDate == DateTime.MinValue)
                 {
                     auditTrail.CreateDate = DateTime.Now;
@@ -114,13 +189,13 @@ namespace SchoolManagementSystem.Models.Initialisation
                 }
             }
             /**
-            int result = base.SaveChanges();
-            foreach (var history in this.ChangeTracker.Entries().Where(e => e.Entity is IModificationHistory).Select(e => e.Entity as IModificationHistory))
-            {
-                history.IsDirty = false;
-            }
-    **/
-            return base.SaveChanges();
+                int result = base.SaveChanges();
+                foreach (var history in this.ChangeTracker.Entries().Where(e => e.Entity is IModificationHistory).Select(e => e.Entity as IModificationHistory))
+                {
+                    history.IsDirty = false;
+                }
+            **/
         }
+
     }
 }

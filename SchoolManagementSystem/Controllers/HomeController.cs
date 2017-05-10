@@ -26,6 +26,11 @@ namespace SchoolManagementSystem.Controllers
                 case "configparams":
                     count = dbcontext.ConfigParams.Count();
                     break;
+
+                case "countyward":
+                    count = dbcontext.CountyWards.Count();
+                    break;
+
                 default:
                     count = 0;
                     break;
@@ -41,11 +46,14 @@ namespace SchoolManagementSystem.Controllers
             {
                 ModelService.InsertPostalCodes();
             }
-            else if (CountNumberOfItems("ConfigParams") <= 0)
+            if (CountNumberOfItems("ConfigParams") <= 0)
             {
                 ModelService.InsertConfigParams();
             }
-            
+            if (CountNumberOfItems("CountyWard") <= 0)
+            {
+                ModelService.InsertWardCounty();
+            }
             
             return View();
         }
