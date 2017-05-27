@@ -37,9 +37,9 @@ namespace SchoolManagementSystemModel.School
 
         public virtual PostalCode PostalCode { get; set; }
 
-        public int CoutyWardId { get; set; }
+        public int WardId { get; set; }
 
-        public virtual CountyWard CoutyWard { get; set; }
+        public virtual Ward Ward { get; set; }
 
         public byte[] Logo { get; set; }
     }

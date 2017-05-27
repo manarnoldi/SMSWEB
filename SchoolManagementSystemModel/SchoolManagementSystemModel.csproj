@@ -75,7 +75,8 @@
     <Compile Include="Enums\StudentCategory.cs" />
     <Compile Include="Enums\TaskStatus.cs" />
     <Compile Include="School\ClassHead.cs" />
-    <Compile Include="School\CountyWard.cs" />
+    <Compile Include="School\Constituency.cs" />
+    <Compile Include="School\County.cs" />
     <Compile Include="School\PostalCode.cs" />
     <Compile Include="School\PostingPeriod.cs" />
     <Compile Include="School\Calendar.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="School\StaffDetails.cs" />
     <Compile Include="School\ToDoList.cs" />
+    <Compile Include="School\Ward.cs" />
     <Compile Include="SMSModelBaseClass.cs" />
     <Compile Include="Student\ClassAttendance.cs" />
     <Compile Include="Student\AdmissionNo.cs" />

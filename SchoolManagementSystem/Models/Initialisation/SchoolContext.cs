@@ -47,7 +47,9 @@ namespace SchoolManagementSystem.Models.Initialisation
         public DbSet<SchoolDetails> SchoolDetails { get; set; }
         public DbSet<StaffDetails> StaffDetails { get; set; }
         public DbSet<ToDoList> ToDoList { get; set; }
-        public DbSet<CountyWard> CountyWards { get; set; }
+        public DbSet<County> County { get; set; }
+        public DbSet<Constituency> Constituency { get; set; }
+        public DbSet<Ward> Ward { get; set; }
 
         public DbSet<AdmissionNo> AdmissionNo { get; set; }
         public DbSet<ClassAttendance> ClassAttendance { get; set; }

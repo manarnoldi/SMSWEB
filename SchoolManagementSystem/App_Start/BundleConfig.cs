@@ -29,7 +29,10 @@ namespace SchoolManagementSystem
                 "~/Scripts/raphael.min.js",
                 "~/Scripts/morris.min.js",
                 "~/Scripts/morris-data.js",
-                "~/Scripts/sb-admin-2.js"));
+                "~/Scripts/sb-admin-2.js",
+                "~/Scripts/chosen.jquery.min.js",
+                "~/Scripts/chosen.proto.min.js",
+                "~/Scripts/custom.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
@@ -38,7 +41,8 @@ namespace SchoolManagementSystem
                       "~/Content/site.css",
                       "~/Content/morris.css",
                        "~/Content/colors.min.css",
-                      "~/Content/font-awesome.min.css"));
+                      "~/Content/font-awesome.min.css",
+                      "~/Content/chosen.min.css"));
 
 
         }

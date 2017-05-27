@@ -27,8 +27,16 @@ namespace SchoolManagementSystem.Controllers
                     count = dbcontext.ConfigParams.Count();
                     break;
 
-                case "countyward":
-                    count = dbcontext.CountyWards.Count();
+                case "county":
+                    count = dbcontext.County.Count();
+                    break;
+
+                case "constituency":
+                    count = dbcontext.Constituency.Count();
+                    break;
+
+                case "ward":
+                    count = dbcontext.Ward.Count();
                     break;
 
                 default:
@@ -50,11 +58,18 @@ namespace SchoolManagementSystem.Controllers
             {
                 ModelService.InsertConfigParams();
             }
-            if (CountNumberOfItems("CountyWard") <= 0)
+            if (CountNumberOfItems("County") <= 0)
             {
-                ModelService.InsertWardCounty();
+                ModelService.InsertCounty();
             }
-            
+            if (CountNumberOfItems("Constituency") <= 0)
+            {
+                ModelService.InsertConstituency();
+            }
+            if (CountNumberOfItems("Ward") <= 0)
+            {
+                ModelService.InsertWard();
+            }
             return View();
         }
 

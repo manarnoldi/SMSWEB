@@ -33,9 +33,9 @@ namespace SchoolManagementSystemModel.Student
 
         public Gender Gender { get; set; }
 
-        public int CountyWardId { get; set; }
+        public int WardId { get; set; }
 
-        public virtual CountyWard CountyWard { get; set; }
+        public virtual Ward Ward { get; set; }
 
         [StringLength(30)]
         [Column(TypeName = "varchar")]

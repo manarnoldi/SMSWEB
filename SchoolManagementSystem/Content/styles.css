@@ -1189,3 +1189,9 @@
 .icon-versions:before{content:"\e9ff";}
 .icon-x:before{content:"\ea00";}
 .req:after {content:"*";font-size:14px;color:#cc0000;padding-left:4px}
+
+.home-border{
+    margin-top: 20px;
+    padding:10px;
+    border:1px solid #D2D7D3;
+}
