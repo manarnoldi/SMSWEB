@@ -27,8 +27,8 @@ namespace SchoolManagementSystem
             bundles.Add(new ScriptBundle("~/Scripts/js").Include(
                 "~/Scripts/metisMenu.min.js",
                 "~/Scripts/raphael.min.js",
-                "~/Scripts/morris.min.js",
-                "~/Scripts/morris-data.js",
+                //"~/Scripts/morris.min.js",
+                //"~/Scripts/morris-data.js",
                 "~/Scripts/sb-admin-2.js",
                 "~/Scripts/chosen.jquery.min.js",
                 "~/Scripts/chosen.proto.min.js",
