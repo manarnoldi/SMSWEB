@@ -149,9 +149,10 @@ namespace SchoolManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -169,7 +170,7 @@ namespace SchoolManagementSystem.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return PartialView();
         }
 
         //

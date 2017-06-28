@@ -4,112 +4,137 @@
     ViewBag.Title = "Create";
 }
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        School Details
+        <small>Create</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">SchoolDetails</a></li>
+        <li class="active">Create</li>
+    </ol>
+</section>
 
-    <div class="form-horizontal">
-        <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter School Details</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name,"School Name", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Enter School Details</h3>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PhoneNumber,"Phone Number", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="box-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmailAddress,"Email Address", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Name, "School Name", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "School Name" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.MobileNumber,"Mobile Number", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PhoneNumber, "Phone Number", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Phone Number" } })
+                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PostalAddress,"Postal Address", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PostalAddress, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PostalAddress, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EmailAddress, "Email Address", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control", placeholder = "Email Address" } })
+                                @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PostalCodeId, "Postal Code", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("PostalCodeId", null, string.Empty, htmlAttributes: new { @class = "form-control chosen", data_placeholder="Select Postal Name" })
-                @Html.ValidationMessageFor(model => model.PostalCodeId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            </div>
 
-        <div class="form-group">
-            @Html.Label("County", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @{ List<SchoolManagementSystemModel.School.County> counties = ViewBag.CountyId; }
-                @Html.DropDownList("County", counties.Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.CountyName }),string.Empty,
-               new { @class = "form-control chosen", onchange = "getItems('countyDropDown','constituencyDropDown','/SchoolDetails/getConstituencies')",
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.MobileNumber, "Mobile Number", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Mobile Number" } })
+                                @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PostalAddress, "Postal Address", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.PostalAddress, new { htmlAttributes = new { @class = "form-control", placeholder = "Postal Address" } })
+                                @Html.ValidationMessageFor(model => model.PostalAddress, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PostalCodeId, "Postal Code", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownList("PostalCodeId", null, string.Empty, htmlAttributes: new { @class = "form-control chosen", data_placeholder = "Select Postal Name" })
+                                @Html.ValidationMessageFor(model => model.PostalCodeId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                @Html.Label("County", htmlAttributes: new { @class = "control-label" })
+                                @{ List<SchoolManagementSystemModel.School.County> counties = ViewBag.CountyId; }
+                                @Html.DropDownList("County", counties.Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.CountyName }), string.Empty,
+               new
+               {
+                   @class = "form-control chosen",
+                   onchange = "getItems('countyDropDown','constituencyDropDown','/SchoolDetails/getConstituencies')",
                    Id = "countyDropDown",
                    data_placeholder = "Select County",
                    data_val = "true",
                    data_val_required = "County is required"
                })
-            </div>
-        </div>
+                            </div>
 
-        <div class="form-group">
-            @Html.Label("Constituency", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Constituency", Enumerable.Empty<SelectListItem>(),string.Empty,
-               new { @class = "form-control chosen", onchange = "getItems('constituencyDropDown','wardDropDown','/SchoolDetails/getWards')",
+                            <div class="form-group">
+                                @Html.Label("Constituency", htmlAttributes: new { @class = "control-label" })
+
+                                @Html.DropDownList("Constituency", Enumerable.Empty<SelectListItem>(), string.Empty,
+               new
+               {
+                   @class = "form-control chosen",
+                   onchange = "getItems('constituencyDropDown','wardDropDown','/SchoolDetails/getWards')",
                    Id = "constituencyDropDown",
                    data_placeholder = "Select Constituency"
                })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.WardId, "Ward", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("WardId", Enumerable.Empty<SelectListItem>(),string.Empty,
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.WardId, "Ward", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownList("WardId", Enumerable.Empty<SelectListItem>(), string.Empty,
                new { @class = "form-control chosen", Id = "wardDropDown", data_placeholder = "Select Ward" })
-                @Html.ValidationMessageFor(model => model.WardId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                                @Html.ValidationMessageFor(model => model.WardId, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Logo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label" })
+                                <label class="btn btn-info btn-flat form-control" title="Upload School Logo" onclick="$('#schLogo').attr('src', '');">
+                                    <input id="schLogoId" type="file" name="file" style="display:none;"/>
+                                    Upload School Logo
+                                </label>
+                                <br /><br />
+                                <img id="schLogo" src="#" alt="school logo"  style="height: 300px;width: 300px;" class="center-block"/>
+                                @Html.EditorFor(model => model.Logo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-footer">
+                        <input type="submit" value="Submit Details" class="btn btn-info btn-flat pull-right" />
+                    </div>
+                                    }
 
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Submit Details" class="btn btn-primary btn-block" />
             </div>
         </div>
     </div>
-                    }
+</section>
+
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
-    $(".chosen").chosen();
+    $(".chosen").chosen({ max_selected_options: 5 });
     //getItems('countyDropDown', 'constituencyDropDown', '/SchoolDetails/getConstituencies');
-   
+
 });
 
 function getItems(dropDownId, toUpdateDropDownId, updatingUrl, updateValueId) {
@@ -13,7 +13,7 @@ function getItems(dropDownId, toUpdateDropDownId, updatingUrl, updateValueId) {
         datatype: 'application/json',
         contentType: 'application/json',
         data: JSON.stringify({
-        itemId: +itemId
+            itemId: +itemId
         }),
         success: function (result) {
             $("#" + toUpdateDropDownId).html("");
@@ -28,5 +28,22 @@ function getItems(dropDownId, toUpdateDropDownId, updatingUrl, updateValueId) {
             alert(request.responseText);
         },
     });
-    
+
 }
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+       
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#schLogo').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#schLogoId").change(function () {
+    
+    readURL(this);
+});

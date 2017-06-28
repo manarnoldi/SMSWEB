@@ -25,26 +25,32 @@ namespace SchoolManagementSystem
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/js").Include(
-                "~/Scripts/metisMenu.min.js",
-                "~/Scripts/raphael.min.js",
-                //"~/Scripts/morris.min.js",
-                //"~/Scripts/morris-data.js",
-                "~/Scripts/sb-admin-2.js",
+                "~/Content/AdminLTE/plugins/fastclick/fastclick.min.js",
+                "~/Content/AdminLTE/dist/js/adminlte.js",
+                "~/Content/AdminLTE/plugins/sparkline/jquery.sparkline.min.js",
+                "~/Content/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js",
+                "~/Content/AdminLTE/plugins/jvectormap/jquery-jvectormap-world-mill-en.js",
+                "~/Content/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js",
+                "~/Content/AdminLTE/plugins/chartjs/Chart.min.js",
+                "~/Content/AdminLTE/dist/js/demo.js",
                 "~/Scripts/chosen.jquery.min.js",
                 "~/Scripts/chosen.proto.min.js",
                 "~/Scripts/custom.js"));
 
+
+
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/metisMenu.min.css",
-                      "~/Content/styles.css",
-                      "~/Content/site.css",
-                      "~/Content/morris.css",
-                       "~/Content/colors.min.css",
+                      "~/Content/AdminLTE/bootstrap/css/bootstrap.min.css",
                       "~/Content/font-awesome.min.css",
-                      "~/Content/chosen.min.css"));
-
-
+                      "~/Content/AdminLTE/bootstrap/css/font-awesome.min.css",
+                      "~/Content/AdminLTE/bootstrap/css/ionicons.min.css",
+                      "~/Content/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.css",
+                      "~/Content/AdminLTE/dist/css/AdminLTE.min.css",
+                      "~/Content/AdminLTE/dist/css/skins/_all-skins.min.css",
+                      "~/Content/AdminLTE/plugins/iCheck/square/blue.css",
+                      "~/Content/chosen.min.css",
+                      "~/Content/Site.css"));
         }
     }
 }
