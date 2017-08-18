@@ -87,6 +87,7 @@
     <Compile Include="School\SchoolDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="School\StaffDetails.cs" />
+    <Compile Include="School\TermDates.cs" />
     <Compile Include="School\ToDoList.cs" />
     <Compile Include="School\Ward.cs" />
     <Compile Include="SMSModelBaseClass.cs" />

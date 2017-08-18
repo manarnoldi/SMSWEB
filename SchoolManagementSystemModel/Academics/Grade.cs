@@ -26,5 +26,6 @@ namespace SchoolManagementSystemModel.Academics
         public int Points { get; set; }
 
         public virtual List<GradeRemark> GradeRemarks { get; set; }
+
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.School
 {
-    public class Constituency
+    public class Constituency : SMSModelBaseClass
     {
         public int Id { get; set; }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemModel.School
 {
-   public class Ward
+   public class Ward : SMSModelBaseClass
     {
         public int Id { get; set; }
 

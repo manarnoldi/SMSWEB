@@ -41,6 +41,8 @@ namespace SchoolManagementSystemModel.School
 
         public virtual Ward Ward { get; set; }
 
-        public byte[] Logo { get; set; }
+        [StringLength(300)]
+        [Column(TypeName = "varchar")]
+        public string SchoolLogoUrl { get; set; }
     }
 }

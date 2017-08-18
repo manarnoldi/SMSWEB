@@ -4,7 +4,6 @@
     ViewBag.Title = "Create";
 }
 
-<!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
         School Details
@@ -24,13 +23,12 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Enter School Details</h3>
                 </div>
-
-                @using (Html.BeginForm())
+                @using (Html.BeginForm("Create", "SchoolDetails", null, FormMethod.Post,
+                      new { enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
                     <div class="box-body">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
                         <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Name, "School Name", htmlAttributes: new { @class = "control-label" })
@@ -48,7 +46,6 @@
                                 @Html.LabelFor(model => model.EmailAddress, "Email Address", htmlAttributes: new { @class = "control-label" })
                                 @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control", placeholder = "Email Address" } })
                                 @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
-
                             </div>
 
                             <div class="form-group">
@@ -64,76 +61,92 @@
                             </div>
 
                             <div class="form-group">
-                                @Html.LabelFor(model => model.PostalCodeId, "Postal Code", htmlAttributes: new { @class = "control-label" })
-                                @Html.DropDownList("PostalCodeId", null, string.Empty, htmlAttributes: new { @class = "form-control chosen", data_placeholder = "Select Postal Name" })
+                                @Html.LabelFor(model => model.PostalCodeId, "Postal Name", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownList("PostalCodeId", (SelectList)ViewBag.PostalCodeId, string.Empty, htmlAttributes: new
+                           {
+                               @class = "form-control select2",
+                               data_placeholder = "Select Postal Name",
+                               style = "width: 100%",
+                               Id = "PostalName",
+                               onchange = "loadTextBoxFromSelect('PostalName','postalCodeText')"
+                           })
                                 @Html.ValidationMessageFor(model => model.PostalCodeId, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Postal Code</label>
+                                <input id="postalCodeText" type="text" name="postalCode" class="form-control" placeholder="Postal Code" readonly />
                             </div>
                         </div>
 
                         <div class="col-md-6">
-
                             <div class="form-group">
                                 @Html.Label("County", htmlAttributes: new { @class = "control-label" })
                                 @{ List<SchoolManagementSystemModel.School.County> counties = ViewBag.CountyId; }
                                 @Html.DropDownList("County", counties.Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.CountyName }), string.Empty,
-               new
-               {
-                   @class = "form-control chosen",
-                   onchange = "getItems('countyDropDown','constituencyDropDown','/SchoolDetails/getConstituencies')",
-                   Id = "countyDropDown",
-                   data_placeholder = "Select County",
-                   data_val = "true",
-                   data_val_required = "County is required"
-               })
+                            new
+                            {
+                                @class = "form-control select2",
+                                onchange = "getItems('countyDropDown','constituencyDropDown','/SchoolDetails/getConstituencies')",
+                                Id = "countyDropDown",
+                                data_placeholder = "Select County",
+                                data_val = "true",
+                                data_val_required = "County is required",
+                                style = "width: 100%"
+                            })
                             </div>
 
                             <div class="form-group">
                                 @Html.Label("Constituency", htmlAttributes: new { @class = "control-label" })
 
                                 @Html.DropDownList("Constituency", Enumerable.Empty<SelectListItem>(), string.Empty,
-               new
-               {
-                   @class = "form-control chosen",
-                   onchange = "getItems('constituencyDropDown','wardDropDown','/SchoolDetails/getWards')",
-                   Id = "constituencyDropDown",
-                   data_placeholder = "Select Constituency"
-               })
+                            new
+                            {
+                                @class = "form-control select2",
+                                onchange = "getItems('constituencyDropDown','wardDropDown','/SchoolDetails/getWards')",
+                                Id = "constituencyDropDown",
+                                data_placeholder = "Select Constituency",
+                                style = "width: 100%"
+                            })
 
                             </div>
 
                             <div class="form-group">
                                 @Html.LabelFor(model => model.WardId, "Ward", htmlAttributes: new { @class = "control-label" })
                                 @Html.DropDownList("WardId", Enumerable.Empty<SelectListItem>(), string.Empty,
-               new { @class = "form-control chosen", Id = "wardDropDown", data_placeholder = "Select Ward" })
+                            new
+                            {
+                                @class = "form-control select2",
+                                Id = "wardDropDown",
+                                data_placeholder = "Select Ward",
+                                style = "width: 100%"
+                            })
                                 @Html.ValidationMessageFor(model => model.WardId, "", new { @class = "text-danger" })
-
                             </div>
 
                             <div class="form-group">
-                                @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label" })
-                                <label class="btn btn-info btn-flat form-control" title="Upload School Logo" onclick="$('#schLogo').attr('src', '');">
-                                    <input id="schLogoId" type="file" name="file" style="display:none;"/>
-                                    Upload School Logo
-                                </label>
+                                @Html.LabelFor(model => model.SchoolLogoUrl, htmlAttributes: new { @class = "control-label" })
+                                <label class="btn btn-info btn-flat form-control" title="Upload School Logo"
+                                       onclick="$('#schLogo').attr('src', '');$('#schLogoId').val(null)">
+                                    Click here to select School Logo
+                                    <input id="schLogoId" type="file" name="file" style="display:none;" />
+                                </label>                                    <br /><br />
+                                <img id="schLogo" src="#" alt="school logo" style="height: 300px;width: 300px; border:1px solid grey;" class="center-block" />
                                 <br /><br />
-                                <img id="schLogo" src="#" alt="school logo"  style="height: 300px;width: 300px;" class="center-block"/>
-                                @Html.EditorFor(model => model.Logo, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "text-danger" })
+                                @*@Html.EditorFor(model => model.SchoolLogoUrl, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                                @Html.ValidationMessageFor(model => model.SchoolLogoUrl, "", new { @class = "text-danger", id = "SchoolLogoUrl" })
                             </div>
                         </div>
                     </div>
-
                     <div class="box-footer">
-                        <input type="submit" value="Submit Details" class="btn btn-info btn-flat pull-right" />
+                        <input type="submit" value="Submit Details" class="btn btn-info btn-flat pull-right" onclick="return confirm('Update Details?');" />
                     </div>
                                     }
-
-
             </div>
         </div>
     </div>
 </section>
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

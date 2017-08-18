@@ -57,7 +57,9 @@ namespace SchoolManagementSystemModel.Student
 
         public virtual PostalCode PostalCode { get; set; }
 
-        public byte[] Image { get; set; }
+        [StringLength(300)]
+        [Column(TypeName = "varchar")]
+        public string StudentImageUrl { get; set; }
 
         public virtual List<SchoolClass> Classes { get; set; }
 

@@ -69,6 +69,10 @@ namespace SchoolManagementSystemModel.School
         [StringLength(30)]
         [Column(TypeName = "varchar")]
         public string PostalAddress { get; set; }
+
+        [StringLength(300)]
+        [Column(TypeName ="varchar")]
+        public string StaffImageUrl { get; set; }
         
         public virtual PostalCode PostalCode { get; set; }
 

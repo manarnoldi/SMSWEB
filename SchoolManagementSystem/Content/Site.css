@@ -17,6 +17,6 @@
     text-align: center;
 }
 
-.chosen-container .chosen-results{
-    max-height: 125px;
+ul.select2-results__options {
+    max-height: 100px !important;
 }
