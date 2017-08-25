@@ -97,7 +97,7 @@ function clearTextData(textId) {
 function deleteRecord(action, controller, Id) {
     $.ajax({
         type: "post", // here is your problem
-        url: "@Url.Action("+action+", "+controller+")",
+        url: "@Url.Action(action, controller)",
         data: { id: Id },
         ajaxasync: true,
         success: function () {
