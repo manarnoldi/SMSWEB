@@ -1,0 +1,48 @@
+﻿@model SchoolManagementSystemModel.School.Calendar
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<div class="box-header with-border">
+    <h3 class="box-title">Enter Term Dates</h3>
+</div>
+@using (Html.BeginForm("Create", "Calendars", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="box-body">
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PeriodName, "Term Name: ", htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.PeriodName, new { htmlAttributes = new { @class = "form-control", placeholder = "Term Name" } })
+                    @Html.ValidationMessageFor(model => model.PeriodName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StartDate, "Start Date: ", htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control date-picker", placeholder = "Start Date" } })
+                    @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EndDate, "End Date: ", htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control date-picker", placeholder = "End Date"} })
+                    @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Status, "Status", htmlAttributes: new { @class = "control-label" })
+                    @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+                    <div class="box-footer">
+                        <input type="submit" value="Submit Details" class="btn btn-info btn-flat pull-right" />
+                    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,88 @@
+﻿@model SchoolManagementSystem.Models.ViewModels.CalendarsIndexCreateViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<section class="content-header">
+    <h1>
+        Term Dates
+        <small>Create</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">TermDates</a></li>
+        <li class="active">Create</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box box-primary">
+                @Html.Partial("Create", Model.CreateCalendar)
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">View TermDates</h3>
+                </div>
+
+                <table class="table">
+                    @{var headerMetadata = Model.Calendars.FirstOrDefault();}
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => headerMetadata.PeriodName)
+                        </th>
+                        <th>
+                            Year
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => headerMetadata.StartDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => headerMetadata.EndDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => headerMetadata.Status)
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model.Calendars)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PeriodName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StartDate.Year)
+                            </td>
+                            <td>
+                                @{var startDateString = SchoolManagementSystem.Assets.Utils.FormatDateAlone(item.StartDate);}
+                                @Html.DisplayFor(modelItem => startDateString, "{0:dd/MM/yyyy}")
+                            </td>
+                            <td>
+                                @{var endDateString = SchoolManagementSystem.Assets.Utils.FormatDateAlone(item.EndDate);}
+                                @Html.DisplayFor(modelItem => endDateString, "{0:dd/MM/yyyy}")
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                <a href="#" id="@item.Id" class="calendarDelete">Delete</a>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @onclick = "deleteRecord('Delete', 'Calendars', '" + item.Id + "')" }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

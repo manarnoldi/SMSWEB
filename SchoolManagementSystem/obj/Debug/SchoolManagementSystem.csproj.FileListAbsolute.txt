@@ -496,3 +496,7 @@ C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagement
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.initial.resources
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.GenerateResource.Cache
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.AddeddataattributestoTermDates.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.changedcalendarfieldsstartdateandenddatefromdatetimetodateonly.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.Reversedpreviousmigration.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.addeddisplayformatpropertiesforcalendartable.resources

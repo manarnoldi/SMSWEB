@@ -32,8 +32,8 @@ namespace SchoolManagementSystem
                 "~/Content/AdminLTE/plugins/jvectormap/jquery-jvectormap-world-mill-en.js",
                 "~/Content/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js",
                 "~/Content/AdminLTE/plugins/chartjs/Chart.min.js",
-
                 "~/Content/AdminLTE/dist/js/demo.js",
+                "~/Scripts/jquery-ui-1.12.1.min.js",
                 //"~/Scripts/chosen.jquery.min.js",
                 //"~/Scripts/chosen.proto.min.js",
                 "~/Scripts/bootbox.min.js",
@@ -49,6 +49,7 @@ namespace SchoolManagementSystem
                       "~/Content/AdminLTE/dist/css/AdminLTE.min.css",
                       "~/Content/AdminLTE/dist/css/skins/_all-skins.min.css",
                       "~/Content/AdminLTE/plugins/iCheck/square/blue.css",
+                      "~/Content/themes/base/jquery-ui.min.css",
                       //"~/Content/chosen.min.css",
                        "~/Content/css/select2.min.css",
                       "~/Content/Site.css"));

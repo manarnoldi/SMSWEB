@@ -21,9 +21,11 @@ namespace SchoolManagementSystemModel.School
         public string PeriodName { get; set; }
 
         [Required]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
 
         [Required]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
 
         public Status Status { get; set; }

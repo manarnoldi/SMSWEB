@@ -205,7 +205,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Assets\FormattedDbEntityValidationException.cs" />
+    <Compile Include="Assets\Utils.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CalendarsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SchoolDetailsController.cs" />
@@ -216,12 +218,29 @@
     <Compile Include="Migrations\201708010712198_initial.Designer.cs">
       <DependentUpon>201708010712198_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708240910280_Added data attributes to TermDates.cs" />
+    <Compile Include="Migrations\201708240910280_Added data attributes to TermDates.Designer.cs">
+      <DependentUpon>201708240910280_Added data attributes to TermDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251027405_changed calendar fields startdate and enddate from datetime to date only.cs" />
+    <Compile Include="Migrations\201708251027405_changed calendar fields startdate and enddate from datetime to date only.Designer.cs">
+      <DependentUpon>201708251027405_changed calendar fields startdate and enddate from datetime to date only.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251034464_Reversed previous migration.cs" />
+    <Compile Include="Migrations\201708251034464_Reversed previous migration.Designer.cs">
+      <DependentUpon>201708251034464_Reversed previous migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251104131_added display format properties for calendar table.cs" />
+    <Compile Include="Migrations\201708251104131_added display format properties for calendar table.Designer.cs">
+      <DependentUpon>201708251104131_added display format properties for calendar table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Initialisation\ModelService.cs" />
     <Compile Include="Models\Initialisation\SchoolContext.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ViewModels\CalendarsIndexCreateViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -421,6 +440,47 @@
     <Content Include="Content\metisMenu.min.css" />
     <Content Include="Content\morris.css" />
     <Content Include="Content\styles.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Data\SchoolLogo\emptyImage.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -475,6 +535,8 @@
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -539,13 +601,17 @@
     <Content Include="Views\SchoolDetails\Edit.cshtml" />
     <Content Include="Views\SchoolDetails\Index.cshtml" />
     <Content Include="Views\SchoolDetails\EditView.cshtml" />
+    <Content Include="Views\Calendars\Create.cshtml" />
+    <Content Include="Views\Calendars\Delete.cshtml" />
+    <Content Include="Views\Calendars\Details.cshtml" />
+    <Content Include="Views\Calendars\Edit.cshtml" />
+    <Content Include="Views\Calendars\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Data\StudentImage\" />
     <Folder Include="Data\TeacherImage\" />
     <Folder Include="Data\UserProfileImage\" />
-    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -562,6 +628,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708010712198_initial.resx">
       <DependentUpon>201708010712198_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708240910280_Added data attributes to TermDates.resx">
+      <DependentUpon>201708240910280_Added data attributes to TermDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251027405_changed calendar fields startdate and enddate from datetime to date only.resx">
+      <DependentUpon>201708251027405_changed calendar fields startdate and enddate from datetime to date only.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251034464_Reversed previous migration.resx">
+      <DependentUpon>201708251034464_Reversed previous migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251104131_added display format properties for calendar table.resx">
+      <DependentUpon>201708251104131_added display format properties for calendar table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
