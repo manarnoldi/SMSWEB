@@ -1,0 +1,115 @@
+﻿@model SchoolManagementSystem.Models.ViewModels.ConfigParamsIndexEditViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+<section class="content-header">
+    <h1>
+        Config Parameters
+        <small>Edit</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">ConfigParameters</a></li>
+        <li class="active">Edit</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Edit Configuration parameters</h3>
+                </div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="box-body">
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.ConfigParameter.Id)
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ConfigParameter.ParamType, "Parameter Type: ", htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.ConfigParameter.ParamType, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", placeholder = "Parameter Type" } })
+                                    @Html.ValidationMessageFor(model => model.ConfigParameter.ParamType, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ConfigParameter.ParamCategory, "Parameter Category: ", htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.ConfigParameter.ParamCategory, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", placeholder = "Parameter Category" } })
+                                    @Html.ValidationMessageFor(model => model.ConfigParameter.ParamCategory, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ConfigParameter.ParamName, "Parameter Name: ", htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.ConfigParameter.ParamName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", placeholder = "Parameter Name" } })
+                                    @Html.ValidationMessageFor(model => model.ConfigParameter.ParamName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ConfigParameter.Value, "Parameter Value: ", htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.ConfigParameter.Value, new { htmlAttributes = new { @class = "form-control", placeholder = "Parameter Value" } })
+                                    @Html.ValidationMessageFor(model => model.ConfigParameter.Value, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <input type="submit" value="Submit Details" class="btn btn-info btn-flat pull-right" />
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Click Edit To Modify Configuration Parameters</h3>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ConfigParameter.ParamType)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ConfigParameter.ParamCategory)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ConfigParameter.ParamName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ConfigParameter.Value)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model.ConfigParameters)
+            {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ParamType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ParamCategory)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ParamName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Value)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
