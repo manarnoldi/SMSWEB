@@ -211,6 +211,7 @@
     <Compile Include="Controllers\ConfigParamsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PostingPeriodsController.cs" />
     <Compile Include="Controllers\SchoolDetailsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -235,6 +236,26 @@
     <Compile Include="Migrations\201708251104131_added display format properties for calendar table.Designer.cs">
       <DependentUpon>201708251104131_added display format properties for calendar table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708280829162_Added calendar to the Posting Periods.cs" />
+    <Compile Include="Migrations\201708280829162_Added calendar to the Posting Periods.Designer.cs">
+      <DependentUpon>201708280829162_Added calendar to the Posting Periods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708280832215_Modified calendar to the Posting Periods.cs" />
+    <Compile Include="Migrations\201708280832215_Modified calendar to the Posting Periods.Designer.cs">
+      <DependentUpon>201708280832215_Modified calendar to the Posting Periods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281234001_Modified calendar added calculated column year.cs" />
+    <Compile Include="Migrations\201708281234001_Modified calendar added calculated column year.Designer.cs">
+      <DependentUpon>201708281234001_Modified calendar added calculated column year.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281246508_Removed changes to calendar i.e added calculated column year.cs" />
+    <Compile Include="Migrations\201708281246508_Removed changes to calendar i.e added calculated column year.Designer.cs">
+      <DependentUpon>201708281246508_Removed changes to calendar i.e added calculated column year.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709211002461_Added year column to Calendar Table.cs" />
+    <Compile Include="Migrations\201709211002461_Added year column to Calendar Table.Designer.cs">
+      <DependentUpon>201709211002461_Added year column to Calendar Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -243,6 +264,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\CalendarsIndexCreateViewModel.cs" />
     <Compile Include="Models\ViewModels\ConfigParamsIndexEditViewModel.cs" />
+    <Compile Include="Models\ViewModels\PostingPeriodsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -613,6 +635,11 @@
     <Content Include="Views\ConfigParams\Details.cshtml" />
     <Content Include="Views\ConfigParams\Index.cshtml" />
     <Content Include="Views\ConfigParams\Edit.cshtml" />
+    <Content Include="Views\PostingPeriods\Create.cshtml" />
+    <Content Include="Views\PostingPeriods\Delete.cshtml" />
+    <Content Include="Views\PostingPeriods\Details.cshtml" />
+    <Content Include="Views\PostingPeriods\Edit.cshtml" />
+    <Content Include="Views\PostingPeriods\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -647,6 +674,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708251104131_added display format properties for calendar table.resx">
       <DependentUpon>201708251104131_added display format properties for calendar table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708280829162_Added calendar to the Posting Periods.resx">
+      <DependentUpon>201708280829162_Added calendar to the Posting Periods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708280832215_Modified calendar to the Posting Periods.resx">
+      <DependentUpon>201708280832215_Modified calendar to the Posting Periods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281234001_Modified calendar added calculated column year.resx">
+      <DependentUpon>201708281234001_Modified calendar added calculated column year.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281246508_Removed changes to calendar i.e added calculated column year.resx">
+      <DependentUpon>201708281246508_Removed changes to calendar i.e added calculated column year.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709211002461_Added year column to Calendar Table.resx">
+      <DependentUpon>201709211002461_Added year column to Calendar Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

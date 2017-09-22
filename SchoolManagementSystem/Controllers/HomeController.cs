@@ -39,6 +39,10 @@ namespace SchoolManagementSystem.Controllers
                     count = dbcontext.Ward.Count();
                     break;
 
+                case "period":
+                    count = dbcontext.Posting.Count();
+                    break;
+
                 default:
                     count = 0;
                     break;
@@ -69,6 +73,12 @@ namespace SchoolManagementSystem.Controllers
             if (CountNumberOfItems("Ward") <= 0)
             {
                 ModelService.InsertWard();
+            }
+            if (CountNumberOfItems("period") != 2)
+            {
+                dbcontext.Posting.RemoveRange(dbcontext.Posting);
+                dbcontext.SaveChanges();
+                ModelService.InsertPosting();
             }
             return View();
         }

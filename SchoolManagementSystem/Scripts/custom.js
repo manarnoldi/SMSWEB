@@ -1,26 +1,10 @@
 ﻿$(document).ready(function () {
-    //$(".chosen").chosen({ max_selected_options: 5 });
-    //getItems('countyDropDown', 'constituencyDropDown', '/SchoolDetails/getConstituencies');
     $('.select2').select2({
         allowClear: true
     });
 
     loadTextBoxFromSelect('PostalName', 'postalCodeText');
-    //var selectedCounty = $('#countyDropDown').val();
-    //var selectedConstituency = $('#constituencyDropDown').val();
-    //var selectedWard = $('#wardDropDown').val();
 
-    //$("#countyDropDown").val(selectedCounty).trigger("change");
-    //$("#constituencyDropDown").val(selectedConstituency).trigger("change");
-    //$("#wardDropDown").val(selectedWard).trigger("change");
-
-    //$("#countyDropDown").val(selectedCounty);
-    //$("#constituencyDropDown").val(selectedConstituency);
-    //$("#wardDropDown").val(selectedWard);
-});
-
-$(function () {
-    // This will make every element with the class "date-picker" into a DatePicker element
     $('.date-picker').datepicker({
         dateFormat: "mm/dd/yy", changeMonth: true,
         changeYear: true
@@ -31,10 +15,12 @@ $(function () {
         changeYear: true,
         dateonly: true
     });
-})
+});
 
-function getItems(dropDownId, toUpdateDropDownId, updatingUrl) {
-    var itemId = $("#" + dropDownId).val();
+
+function getItemsYear(dropDownId, toUpdateDropDownId, updatingUrl) {
+    itemId = $("#" + dropDownId).val();
+
     $.ajax
         ({
             url: updatingUrl,
@@ -46,7 +32,32 @@ function getItems(dropDownId, toUpdateDropDownId, updatingUrl) {
             }),
             success: function (result) {
                 $("#" + toUpdateDropDownId).html("");
-                // $("#" + toUpdateDropDownId).append('<option></option>');
+                $.each($.parseJSON(result), function (i, item) {
+                    $("#" + toUpdateDropDownId).append
+                        ($('<option></option>').val(item.PeriodName).html(item.PeriodName))
+                })
+            },
+            error: function (request, status, error) {
+                //alert(request.responseText);
+            },
+        });
+
+}
+
+function getItems(dropDownId, toUpdateDropDownId, updatingUrl) {
+    itemId = $("#" + dropDownId).val();
+    
+    $.ajax
+        ({
+            url: updatingUrl,
+            type: 'POST',
+            datatype: 'application/json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                itemId: +itemId
+            }),
+            success: function (result) {
+                $("#" + toUpdateDropDownId).html("");
                 $.each($.parseJSON(result), function (i, item) {
                     $("#" + toUpdateDropDownId).append
                         ($('<option></option>').val(item.Id).html(item.Name))
@@ -108,8 +119,7 @@ function deleteRecord(action, controller, Id) {
         }
     });
 }
-$('.calendarDelete').click(function (e)
-{
+$('.calendarDelete').click(function (e) {
     id = $(this).attr('id');
     e.preventDefault();
     alert(id);

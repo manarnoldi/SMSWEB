@@ -31,18 +31,23 @@
                             @Html.HiddenFor(model => model.Id)
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    @Html.LabelFor(model => model.Year, "Year: ", htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control", placeholder = "Year" , @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
                                     @Html.LabelFor(model => model.PeriodName, "Term Name: ", htmlAttributes: new { @class = "control-label" })
-                                    @Html.EditorFor(model => model.PeriodName, new { htmlAttributes = new { @class = "form-control", placeholder = "Term Name" } })
+                                    @Html.EditorFor(model => model.PeriodName, new { htmlAttributes = new { @class = "form-control", placeholder = "Term Name", @readonly = "readonly" } })
                                     @Html.ValidationMessageFor(model => model.PeriodName, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.StartDate, "Start Date: ", htmlAttributes: new { @class = "control-label" })
-                                    @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control date-picker-edit", placeholder = "Start Date"} })
+                                    @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Start Date", @disabled = "disabled" } })
                                     @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.EndDate, "End Date: ", htmlAttributes: new { @class = "control-label" })
-                                    @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control date-picker-edit", placeholder = "End Date" } })
+                                    @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control", placeholder = "End Date", @disabled = "disabled" } })
                                     @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">

@@ -53,7 +53,7 @@ namespace SchoolManagementSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PeriodName,StartDate,EndDate,Status,CreateBy,CreateDate,ModifyBy,ModifyDate")] Calendar calendar)
+        public ActionResult Create([Bind(Include = "Id,PeriodName,StartDate,EndDate,Status,Year,CreateBy,CreateDate,ModifyBy,ModifyDate")] Calendar calendar)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace SchoolManagementSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,PeriodName,StartDate,EndDate,Status,CreateBy,CreateDate,ModifyBy,ModifyDate")] Calendar calendar)
+        public ActionResult Edit([Bind(Include = "Id,PeriodName,StartDate,EndDate,Status,Year,CreateBy,CreateDate,ModifyBy,ModifyDate")] Calendar calendar)
         {
             if (ModelState.IsValid)
             {

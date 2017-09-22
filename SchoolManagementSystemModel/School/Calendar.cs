@@ -28,6 +28,9 @@ namespace SchoolManagementSystemModel.School
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
 
+        [Required]
+        public int Year { get; set; }
+        
         public Status Status { get; set; }
 
         public virtual List<ClassAttendance> ClassAttendance {get; set; }
@@ -35,5 +38,7 @@ namespace SchoolManagementSystemModel.School
         public virtual List<Examination> Examinations { get; set; }
 
         public virtual List<ToDoList> ToDoList { get; set; }
+
+        public virtual List<PostingPeriod> PostingPeriod { get; set; }
     }
 }

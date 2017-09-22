@@ -114,5 +114,15 @@ namespace SchoolManagementSystem.Models.Initialisation
                 dbcontext.SaveChanges();
             }
         }
+
+        public static void InsertPosting()
+        {
+            using (SchoolContext dbcontext = new SchoolContext())
+            {
+                dbcontext.Posting.Add(new Posting {  Name = "EXAM RESULTS ENTRY PERIOD" });
+                dbcontext.Posting.Add(new Posting { Name = "FEES ENTRY PERIOD" });
+                dbcontext.SaveChanges();
+            }
+        }
     }
 }

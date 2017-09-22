@@ -24,5 +24,9 @@ namespace SchoolManagementSystemModel.School
         public int PostingId { get; set; }
 
         public virtual Posting Posting { get; set; }
+
+        public int CalendarId { get; set; }
+
+        public virtual Calendar Calendar { get; set; }
     }
 }

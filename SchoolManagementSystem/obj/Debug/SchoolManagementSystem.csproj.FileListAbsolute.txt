@@ -500,3 +500,8 @@ C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagement
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.changedcalendarfieldsstartdateandenddatefromdatetimetodateonly.resources
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.Reversedpreviousmigration.resources
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.addeddisplayformatpropertiesforcalendartable.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.AddedcalendartothePostingPeriods.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.ModifiedcalendartothePostingPeriods.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.Modifiedcalendaraddedcalculatedcolumnyear.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.Removedchangestocalendarieaddedcalculatedcolumnyear.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.AddedyearcolumntoCalendarTable.resources

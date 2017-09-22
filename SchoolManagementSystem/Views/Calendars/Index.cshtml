@@ -38,7 +38,7 @@
                             @Html.DisplayNameFor(model => headerMetadata.PeriodName)
                         </th>
                         <th>
-                            Year
+                            @Html.DisplayNameFor(model => headerMetadata.Year)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => headerMetadata.StartDate)
@@ -61,7 +61,7 @@
                                 @Html.DisplayFor(modelItem => item.PeriodName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.StartDate.Year)
+                                @Html.DisplayFor(modelItem => item.Year)
                             </td>
                             <td>
                                 @{var startDateString = SchoolManagementSystem.Assets.Utils.FormatDateAlone(item.StartDate);}
