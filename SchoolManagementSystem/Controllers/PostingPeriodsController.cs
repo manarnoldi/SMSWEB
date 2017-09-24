@@ -121,6 +121,10 @@ namespace SchoolManagementSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+                postingPeriodVM.PostingPeriod.StartDate = db.PostingPeriod.Where(i => i.Id == postingPeriodVM.PostingPeriod.Id).Select(i => i.StartDate).FirstOrDefault();
+                postingPeriodVM.PostingPeriod.EndDate = db.PostingPeriod.Where(i => i.Id == postingPeriodVM.PostingPeriod.Id).Select(i => i.EndDate).FirstOrDefault();
+                postingPeriodVM.PostingPeriod.CalendarId = db.PostingPeriod.Where(i => i.Id == postingPeriodVM.PostingPeriod.Id).Select(i => i.CalendarId).FirstOrDefault();
+                postingPeriodVM.PostingPeriod.PostingId = db.PostingPeriod.Where(i => i.Id == postingPeriodVM.PostingPeriod.Id).Select(i => i.PostingId).FirstOrDefault();
                 db.Entry(postingPeriodVM.PostingPeriod).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -149,7 +153,7 @@ namespace SchoolManagementSystem.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PostingPeriod postingPeriod = db.PostingPeriod.Find(id);
+            PostingPeriod postingPeriod = db.PostingPeriod.Include(c=>c.Calendar).Include(p=>p.Posting).SingleOrDefault(i=>i.Id == id);
             if (postingPeriod == null)
             {
                 return HttpNotFound();

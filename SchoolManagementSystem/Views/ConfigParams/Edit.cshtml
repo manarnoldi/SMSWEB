@@ -1,7 +1,9 @@
 ﻿@model SchoolManagementSystem.Models.ViewModels.ConfigParamsIndexEditViewModel
+
 @{
     ViewBag.Title = "Edit";
 }
+
 <section class="content-header">
     <h1>
         Config Parameters
@@ -28,6 +30,7 @@
                         <div class="form-horizontal">
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.HiddenFor(model => model.ConfigParameter.Id)
+
                             <div class="col-md-12">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.ConfigParameter.ParamType, "Parameter Type: ", htmlAttributes: new { @class = "control-label" })

@@ -15,6 +15,7 @@
         <li class="active">Edit</li>
     </ol>
 </section>
+
 <section class="content">
     <div class="row">
         <div class="col-md-4">
@@ -22,7 +23,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Enter Posting Periods</h3>
                 </div>
-                @using (Html.BeginForm("Edit", "PostingPeriods", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
                     <div class="box-body">
