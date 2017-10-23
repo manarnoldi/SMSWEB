@@ -505,3 +505,5 @@ C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagement
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.Modifiedcalendaraddedcalculatedcolumnyear.resources
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.Removedchangestocalendarieaddedcalculatedcolumnyear.resources
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Migrations.AddedyearcolumntoCalendarTable.resources
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\bin\DataTables.AspNet.Core.dll
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem\bin\DataTables.AspNet.Mvc5.dll

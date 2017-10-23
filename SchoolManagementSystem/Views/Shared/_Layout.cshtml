@@ -6,11 +6,12 @@
     <title>SchoolSoft</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/datatables")
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-    
+
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
@@ -31,7 +32,7 @@
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        
+
                         <!-- Messages: style can be found in dropdown.less-->
                         <li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -115,7 +116,7 @@
                             </ul>
                         </li>
                         <!-- User Account: style can be found in dropdown.less -->
-                       
+
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="@Url.Content("~/Images/Personalmage.jpg")" class="user-image" alt="User Image">
@@ -193,7 +194,7 @@
                             <li><a href="@Url.Action("Index", "Calendars")"><i class="fa fa-circle-o"></i> School Calendar</a></li>
                             <li><a href="@Url.Action("Index", "ConfigParams")"><i class="fa fa-circle-o"></i> Config Parameters</a></li>
                             <li><a href="@Url.Action("Index", "PostingPeriods")"><i class="fa fa-circle-o"></i> Posting Periods</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Postal Codes</a></li>
+                            <li><a href="@Url.Action("Index", "PostalCodes")"><i class="fa fa-circle-o"></i> Postal Codes</a></li>
                             <li><a href="#"><i class="fa fa-circle-o"></i> County Wards</a></li>
                         </ul>
                     </li>
@@ -267,7 +268,7 @@
                             <li><a href="#"><i class="fa fa-circle-o"></i> Report Forms</a></li>
                         </ul>
                     </li>
-                  
+
                 </ul>
             </section>
             <!-- /.sidebar -->
@@ -275,10 +276,10 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-           @RenderBody()
+            @RenderBody()
         </div>
         <!-- /.content-wrapper -->
-        
+
         <footer class="main-footer alignMiddle">
             <div class="hidden-xs pull-left">
                 SchoolSoft Web
@@ -292,7 +293,7 @@
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Create the tabs -->
             <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-                <li ><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
@@ -360,6 +361,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/js")
+    @Scripts.Render("~/bundles/datatables")
     @RenderSection("scripts", required: false)
 </body>
 </html>

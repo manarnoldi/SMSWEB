@@ -53,6 +53,15 @@ namespace SchoolManagementSystem
                       //"~/Content/chosen.min.css",
                        "~/Content/css/select2.min.css",
                       "~/Content/Site.css"));
+
+            // jquery datataables js files
+            bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
+                        "~/Scripts/DataTables/jquery.dataTables.min.js",
+                        "~/Scripts/DataTables/dataTables.bootstrap.min.js"));
+
+            // jquery datatables css file
+            bundles.Add(new StyleBundle("~/Content/datatables").Include(
+                      "~/Content/DataTables/css/dataTables.bootstrap.min.css"));
         }
     }
 }
