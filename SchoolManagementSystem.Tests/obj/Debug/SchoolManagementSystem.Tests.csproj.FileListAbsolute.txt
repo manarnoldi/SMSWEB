@@ -329,3 +329,4 @@ C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagement
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem.Tests\bin\Debug\roslyn\vbc.rsp
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem.Tests\bin\Debug\roslyn\VBCSCompiler.exe
 C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Users\amwadwaa\Documents\Visual Studio 2017\Projects\SMS WEB\SchoolManagementSystem.Tests\bin\Debug\Vereyon.Web.FlashMessage.dll

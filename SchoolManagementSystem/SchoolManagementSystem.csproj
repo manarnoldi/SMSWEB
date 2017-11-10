@@ -48,12 +48,6 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DataTables.AspNet.Core, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DataTables.AspNet.Core.2.0.2\lib\net45\DataTables.AspNet.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DataTables.AspNet.Mvc5, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DataTables.AspNet.Mvc5.2.0.2\lib\net45\DataTables.AspNet.Mvc5.dll</HintPath>
-    </Reference>
     <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
       <Private>True</Private>
@@ -152,6 +146,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Vereyon.Web.FlashMessage, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vereyon.Web.FlashMessage.1.0.1\lib\net40\Vereyon.Web.FlashMessage.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
@@ -215,11 +212,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalendarsController.cs" />
     <Compile Include="Controllers\ConfigParamsController.cs" />
+    <Compile Include="Controllers\ConstituenciesController.cs" />
+    <Compile Include="Controllers\CountiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PostalCodesController.cs" />
     <Compile Include="Controllers\PostingPeriodsController.cs" />
     <Compile Include="Controllers\SchoolDetailsController.cs" />
+    <Compile Include="Controllers\WardsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -271,6 +271,9 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\CalendarsIndexCreateViewModel.cs" />
     <Compile Include="Models\ViewModels\ConfigParamsIndexEditViewModel.cs" />
+    <Compile Include="Models\ViewModels\ConstituencyViewModel.cs" />
+    <Compile Include="Models\ViewModels\CountyViewModel.cs" />
+    <Compile Include="Models\ViewModels\WardsViewModel.cs" />
     <Compile Include="Models\ViewModels\PostalCodesViewModel.cs" />
     <Compile Include="Models\ViewModels\PostingPeriodsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -656,6 +659,21 @@
     <Content Include="Views\PostalCodes\Details.cshtml" />
     <Content Include="Views\PostalCodes\Edit.cshtml" />
     <Content Include="Views\PostalCodes\Index.cshtml" />
+    <Content Include="Views\Wards\Create.cshtml" />
+    <Content Include="Views\Wards\Delete.cshtml" />
+    <Content Include="Views\Wards\Details.cshtml" />
+    <Content Include="Views\Wards\Edit.cshtml" />
+    <Content Include="Views\Wards\Index.cshtml" />
+    <Content Include="Views\Counties\Create.cshtml" />
+    <Content Include="Views\Counties\Delete.cshtml" />
+    <Content Include="Views\Counties\Details.cshtml" />
+    <Content Include="Views\Counties\Edit.cshtml" />
+    <Content Include="Views\Counties\Index.cshtml" />
+    <Content Include="Views\Constituencies\Create.cshtml" />
+    <Content Include="Views\Constituencies\Delete.cshtml" />
+    <Content Include="Views\Constituencies\Details.cshtml" />
+    <Content Include="Views\Constituencies\Edit.cshtml" />
+    <Content Include="Views\Constituencies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
